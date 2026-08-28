@@ -22,7 +22,8 @@ type Turn = {
 
 const EXAMPLES = [
   '배송비가 얼마인가요?',
-  '트래블매트 색상은 뭐가 있나요?',
+  '스마트스토어 반품비는 얼마인가요?',
+  '요가바지도 파나요?',
   '요가매트 세탁해도 되나요?',
   '반품은 며칠 안에 해야 하나요?',
   '리포머 매트 가격 알려주세요',
@@ -196,8 +197,9 @@ function Intro({ store, storeError }: { store: DocStore | null; storeError?: str
       <p className="eyebrow">soulmat.kr 공개 자료 기반</p>
       <h1>소울매트 구매 안내 챗봇</h1>
       <p className="lede">
-        요가매트 전문 브랜드 <strong>소울매트</strong>의 제품·배송·교환 안내를 자사몰 공개 자료에
-        근거해서만 답합니다. 답변마다 <strong>어느 자료를 근거로 삼았는지</strong>와{' '}
+        요가매트 전문 브랜드 <strong>소울매트</strong>의 제품·배송·교환 안내를 자사몰(soulmat.kr)과
+        네이버 스마트스토어의 공개 자료에 근거해서만 답합니다. 두 채널은 배송비와 반품 비용이
+        다르므로 답변에 어느 채널 기준인지 함께 표시합니다. 답변마다 <strong>어느 자료를 근거로 삼았는지</strong>와{' '}
         <strong>그 답을 어떻게 판정했는지</strong>를 함께 보여줍니다.
       </p>
       <ul className="scope">

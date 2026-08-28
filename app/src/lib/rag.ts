@@ -1,7 +1,17 @@
 import type { Chunk, DocStore, Hit, Retrieval } from './types'
 
-/** 최고 코사인 유사도가 이 값 미만이면 '약한 근거'로 표시한다 (교안 기준). */
-export const WEAK_EVIDENCE_THRESHOLD = 0.55
+/**
+ * 최고 코사인 유사도가 이 값 미만이면 '약한 근거'로 표시한다.
+ *
+ * 교안 기준값은 0.55다. 그 값을 우리 자료에 그대로 쓰면 답이 있는 질문까지
+ * 약한 근거로 잘라내 모델이 거절하게 만들었다. (EXP-06)
+ * 고정 질문 세트 실측:
+ *   자료 밖 질문 최고점 0.438  /  도메인 내 질문 최저점 0.502
+ * 두 분포가 겹치지 않으므로 그 사이인 0.47로 조정했다.
+ * embeddinggemma 의 한국어 코사인 분포가 교안의 모두콘 자료보다 낮게 나오는 것이
+ * 원인이며, 임계값은 자료마다 다시 재야 하는 값이다.
+ */
+export const WEAK_EVIDENCE_THRESHOLD = 0.47
 export const TOP_K = 5
 /** 하이브리드 가중치: 의미(코사인) 우선, 정확한 표기(BM25) 보완 */
 export const COSINE_WEIGHT = 0.7

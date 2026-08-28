@@ -14,7 +14,7 @@ import type { DocStore } from '../src/lib/types'
 const name = process.argv[2] || 'baseline'
 
 /** 고정 질문 세트 — 자료 직답 / 여러 청크 연결 / 자료 밖 3종을 섞는다. */
-const QUESTIONS: { q: string; kind: '직답' | '연결' | '자료밖' }[] = [
+const QUESTIONS: { q: string; kind: '직답' | '연결' | '자료밖' | '채널' }[] = [
   { q: '배송비가 얼마인가요?', kind: '직답' },
   { q: '트래블매트 색상은 뭐가 있나요?', kind: '직답' },
   { q: '요가매트 세탁해도 되나요?', kind: '직답' },
@@ -27,6 +27,10 @@ const QUESTIONS: { q: string; kind: '직답' | '연결' | '자료밖' }[] = [
   { q: '루루레몬 매트랑 비교하면 어떤가요?', kind: '자료밖' },
   { q: '요가 초보인데 어떤 자세부터 하면 되나요?', kind: '자료밖' },
   { q: '지금 재고 몇 개 남았나요?', kind: '자료밖' },
+  { q: '스마트스토어에서 반품하면 비용이 얼마인가요?', kind: '채널' },
+  { q: '요가바지도 파나요?', kind: '채널' },
+  { q: '배송비 얼마예요?', kind: '채널' },
+  { q: '요가원 단체로 매트 주문할 수 있나요?', kind: '채널' },
 ]
 
 const store: DocStore = JSON.parse(
@@ -63,7 +67,7 @@ const secs = ((Date.now() - t0) / 1000).toFixed(0)
 const md = [
   `# 실험 ${name}`,
   '',
-  `- 고정 질문 ${QUESTIONS.length}문항 (직답 5 / 연결 3 / 자료밖 4)`,
+  `- 고정 질문 ${QUESTIONS.length}문항 (직답 5 / 연결 3 / 자료밖 4 / 채널 4)`,
   `- 임베딩 ${store.model} ${store.dim}차원 · 청크 ${store.chunks.length}개`,
   `- pass ${pass}/${QUESTIONS.length} · 총 ${secs}초`,
   '',
