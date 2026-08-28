@@ -3,7 +3,7 @@
 soulmat.kr 공개 자료에만 근거해 답하고, **그 근거와 자동 판정을 함께 보여주는** RAG 챗봇입니다.
 서버가 답을 만들지 않습니다. 페이지를 연 사람의 컴퓨터에서 Ollama가 답변 생성과 질문 임베딩을 모두 처리합니다.
 
-- 배포 주소: *(배포 후 기재)*
+- 배포 주소: **https://soulairise.github.io/soulmat-chatbot/**
 - 기획 문서: [PRD.md](./PRD.md)
 - 실험 기록: [results/](./results/)
 
@@ -26,9 +26,9 @@ ollama pull embeddinggemma:300m
 
 ```bash
 # macOS
-launchctl setenv OLLAMA_ORIGINS "https://<사용자명>.github.io"
+launchctl setenv OLLAMA_ORIGINS "https://soulairise.github.io"
 # Linux
-export OLLAMA_ORIGINS="https://<사용자명>.github.io"
+export OLLAMA_ORIGINS="https://soulairise.github.io"
 # 설정 후 Ollama 재시작
 ```
 
