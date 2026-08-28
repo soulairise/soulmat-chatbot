@@ -14,7 +14,7 @@ import type { DocStore } from '../src/lib/types'
 const name = process.argv[2] || 'baseline'
 
 /** 고정 질문 세트 — 자료 직답 / 여러 청크 연결 / 자료 밖 3종을 섞는다. */
-const QUESTIONS: { q: string; kind: '직답' | '연결' | '자료밖' | '채널' }[] = [
+const QUESTIONS: { q: string; kind: '직답' | '연결' | '자료밖' | '채널' | '실문의' }[] = [
   { q: '배송비가 얼마인가요?', kind: '직답' },
   { q: '트래블매트 색상은 뭐가 있나요?', kind: '직답' },
   { q: '요가매트 세탁해도 되나요?', kind: '직답' },
@@ -31,6 +31,14 @@ const QUESTIONS: { q: string; kind: '직답' | '연결' | '자료밖' | '채널'
   { q: '요가바지도 파나요?', kind: '채널' },
   { q: '배송비 얼마예요?', kind: '채널' },
   { q: '요가원 단체로 매트 주문할 수 있나요?', kind: '채널' },
+  // 아래는 스마트스토어에 실제로 들어온 고객 문의다. 내가 지어낸 질문이 아니다.
+  { q: '매트 사이즈가 어떻게 되나요? 만두카 일반매트 크기인가요?', kind: '실문의' },
+  { q: '해변 모래나 잔디밭에서 써도 쿠션감이 있나요?', kind: '실문의' },
+  { q: '옴그레이랑 그레이랑 같은 색인가요?', kind: '실문의' },
+  { q: '베이지색 후면은 무슨 색인가요?', kind: '실문의' },
+  { q: '세탁할 때 물 온도는 몇 도까지 되나요? 세탁망에 넣어야 하나요?', kind: '실문의' },
+  { q: '블루레이크 언제 재입고되나요?', kind: '실문의' },
+  { q: '카톡 리뷰 인증 남겼는데 접수됐나요?', kind: '실문의' },
 ]
 
 const store: DocStore = JSON.parse(
@@ -67,7 +75,7 @@ const secs = ((Date.now() - t0) / 1000).toFixed(0)
 const md = [
   `# 실험 ${name}`,
   '',
-  `- 고정 질문 ${QUESTIONS.length}문항 (직답 5 / 연결 3 / 자료밖 4 / 채널 4)`,
+  `- 고정 질문 ${QUESTIONS.length}문항 (직답 5 / 연결 3 / 자료밖 4 / 채널 4 / 실제 고객문의 7)`,
   `- 임베딩 ${store.model} ${store.dim}차원 · 청크 ${store.chunks.length}개`,
   `- pass ${pass}/${QUESTIONS.length} · 총 ${secs}초`,
   '',
