@@ -167,6 +167,21 @@ SM-011B : 색상 15종 중 민무늬 4종 — 블루레이크, 옴 그레이, �
 
 ---
 
+## 스마트스토어 자료 (네이버 커머스 API)
+
+스마트스토어는 봇 트래픽을 차단하므로 스크래핑이 아니라 **커머스 API** 로 가져옵니다.
+설정 방법은 [docs/네이버커머스API-연결.md](./docs/네이버커머스API-연결.md) 에 있습니다.
+
+```bash
+cd app && cp .env.example .env   # 키를 채운 뒤
+npm run naver:fetch              # 배송비·반품비 원본 수집
+```
+
+인증은 `bcrypt(clientId + "_" + timestamp, clientSecret)` → base64 전자서명 방식이고,
+구현이 공식 문서의 예시 입출력과 일치함을 확인했습니다.
+`scripts/naverCommerce.mjs` 는 **Node 전용**이며 브라우저 앱에서 import 하지 않습니다 —
+API 응답은 빌드 단계에서만 쓰이고 앱에는 결과 벡터만 넘어갑니다.
+
 ## 실행 방법
 
 ```bash
