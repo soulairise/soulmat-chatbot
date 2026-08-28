@@ -1,0 +1,172 @@
+:root {
+  --bg: #fbfaf7;
+  --panel: #ffffff;
+  --ink: #23201c;
+  --dim: #6f675e;
+  --line: #e6e1d8;
+  --accent: #3f6b52;
+  --accent-soft: #eef3ef;
+  --warn: #8a5a1a;
+  --warn-soft: #fdf4e5;
+  --err: #9b2c2c;
+  --err-soft: #fdeeee;
+  --ok: #2f6b4f;
+  --radius: 12px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #171614;
+    --panel: #201f1c;
+    --ink: #ece8e1;
+    --dim: #a39b90;
+    --line: #34322d;
+    --accent: #7fb79a;
+    --accent-soft: #232b26;
+    --warn: #e0b070;
+    --warn-soft: #2a2419;
+    --err: #e78b8b;
+    --err-soft: #2b1c1c;
+    --ok: #7fb79a;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Pretendard',
+    'Malgun Gothic', system-ui, sans-serif;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page { max-width: 760px; margin: 0 auto; padding: 32px 20px 80px; }
+
+/* 소개 */
+.intro { border-bottom: 1px solid var(--line); padding-bottom: 24px; margin-bottom: 20px; }
+.eyebrow { color: var(--accent); font-size: 13px; font-weight: 600; letter-spacing: .04em; margin: 0 0 6px; }
+.intro h1 { font-size: 30px; margin: 0 0 12px; letter-spacing: -.02em; }
+.lede { margin: 0 0 18px; color: var(--ink); }
+.scope { list-style: none; padding: 0; margin: 0 0 14px; display: grid; gap: 10px; }
+.scope li {
+  background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 12px 14px; font-size: 14px; color: var(--dim);
+}
+.scope span { display: block; font-weight: 700; color: var(--ink); font-size: 13px; margin-bottom: 2px; }
+.meta { font-size: 13px; color: var(--dim); margin: 0; }
+.err { color: var(--err); }
+.dim { color: var(--dim); font-size: 13px; }
+
+/* 상태 */
+.status { border-radius: var(--radius); padding: 12px 14px; font-size: 14px; margin-bottom: 20px; border: 1px solid var(--line); }
+.status.checking { color: var(--dim); }
+.status.ok { background: var(--accent-soft); border-color: transparent; color: var(--ok); }
+.status.warn { background: var(--warn-soft); border-color: transparent; color: var(--warn); }
+.status.err { background: var(--err-soft); border-color: transparent; }
+.status ol { margin: 10px 0 0; padding-left: 20px; }
+.status li { margin-bottom: 10px; }
+.status p { margin: 0 0 4px; }
+.status pre {
+  background: rgba(0,0,0,.06); border-radius: 8px; padding: 8px 10px; margin: 6px 0 0;
+  font-size: 12.5px; overflow-x: auto; white-space: pre; color: var(--ink);
+}
+@media (prefers-color-scheme: dark) { .status pre { background: rgba(255,255,255,.07); } }
+.status button {
+  margin-top: 10px; background: transparent; border: 1px solid currentColor; color: inherit;
+  border-radius: 8px; padding: 5px 12px; cursor: pointer; font: inherit; font-size: 13px;
+}
+code { font-size: .92em; background: rgba(0,0,0,.06); padding: 1px 5px; border-radius: 5px; }
+@media (prefers-color-scheme: dark) { code { background: rgba(255,255,255,.09); } }
+
+/* 예시 */
+.examples-title { font-size: 14px; color: var(--dim); margin: 0 0 10px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  background: var(--panel); border: 1px solid var(--line); color: var(--ink);
+  border-radius: 999px; padding: 7px 14px; cursor: pointer; font: inherit; font-size: 13.5px;
+}
+.chip:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
+.chip:disabled { opacity: .5; cursor: default; }
+
+/* 대화 */
+.chat { display: grid; gap: 24px; margin-bottom: 24px; }
+.turn { display: grid; gap: 10px; }
+.q { font-weight: 650; font-size: 16.5px; }
+.a { white-space: pre-wrap; }
+.turn-err { color: var(--err); font-size: 14px; }
+
+.stage { display: flex; align-items: center; gap: 8px; color: var(--dim); font-size: 13.5px; }
+.dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); animation: p 1s infinite; }
+@keyframes p { 0%,100% { opacity: .25 } 50% { opacity: 1 } }
+
+.weak {
+  background: var(--warn-soft); color: var(--warn); border-radius: var(--radius);
+  padding: 10px 13px; font-size: 13.5px;
+}
+
+/* 출처 */
+.sources { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; font-size: 12.5px; }
+.sources-label { color: var(--dim); margin-right: 2px; }
+.src {
+  background: var(--accent-soft); color: var(--accent); text-decoration: none;
+  border-radius: 999px; padding: 3px 10px; border: 1px solid transparent;
+}
+.src:hover { border-color: var(--accent); }
+.link { background: none; border: none; color: var(--dim); text-decoration: underline; cursor: pointer; font: inherit; font-size: 12.5px; padding: 3px 4px; }
+
+/* 판정 */
+.judge { border: 1px solid var(--line); border-left: 3px solid var(--dim); border-radius: 10px; padding: 10px 13px; font-size: 13px; }
+.judge.pass { border-left-color: var(--ok); }
+.judge.warn { border-left-color: var(--warn); }
+.judge.fail { border-left-color: var(--err); }
+.fields { display: flex; flex-wrap: wrap; gap: 6px; }
+.f { border-radius: 6px; padding: 2px 8px; background: rgba(0,0,0,.05); }
+@media (prefers-color-scheme: dark) { .f { background: rgba(255,255,255,.07); } }
+.f b { font-weight: 650; margin-right: 5px; color: var(--dim); font-size: 11.5px; text-transform: uppercase; letter-spacing: .03em; }
+.f.y { color: var(--ok); }
+.f.n { color: var(--err); }
+.reason { margin: 8px 0 0; color: var(--dim); }
+.reason b { color: var(--dim); font-size: 11.5px; text-transform: uppercase; letter-spacing: .03em; margin-right: 5px; }
+
+/* 피드백 */
+.feedback { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; font-size: 13px; color: var(--dim); }
+.feedback button {
+  background: transparent; border: 1px solid var(--line); color: var(--dim);
+  border-radius: 999px; padding: 3px 12px; cursor: pointer; font: inherit; font-size: 12.5px;
+}
+.feedback button.on { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
+.feedback em { font-style: normal; font-size: 12.5px; }
+
+/* 입력 */
+.composer { display: flex; gap: 8px; position: sticky; bottom: 16px; }
+.composer input {
+  flex: 1; background: var(--panel); border: 1px solid var(--line); color: var(--ink);
+  border-radius: var(--radius); padding: 12px 14px; font: inherit; font-size: 15px;
+}
+.composer input:focus { outline: 2px solid var(--accent); outline-offset: -1px; }
+.composer button {
+  background: var(--accent); color: #fff; border: none; border-radius: var(--radius);
+  padding: 0 20px; cursor: pointer; font: inherit; font-weight: 600;
+}
+.composer button:disabled { opacity: .45; cursor: default; }
+.btn-cancel { background: var(--err) !important; }
+
+/* 모달 */
+.backdrop { position: fixed; inset: 0; background: rgba(0,0,0,.45); display: grid; place-items: center; padding: 20px; z-index: 10; }
+.modal { background: var(--panel); border-radius: 14px; max-width: 900px; width: 100%; max-height: 82vh; overflow: auto; padding: 20px; }
+.modal header { display: flex; justify-content: space-between; align-items: center; }
+.modal h2 { font-size: 17px; margin: 0; }
+.modal header button { background: transparent; border: 1px solid var(--line); color: var(--ink); border-radius: 8px; padding: 4px 12px; cursor: pointer; font: inherit; font-size: 13px; }
+.modal-q { font-weight: 650; margin: 12px 0 4px; }
+.modal-meta { color: var(--dim); font-size: 13px; margin: 0 0 12px; }
+.modal table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+.modal th, .modal td { text-align: left; padding: 7px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.modal th { color: var(--dim); font-weight: 600; font-size: 11.5px; text-transform: uppercase; }
+.modal .tx { color: var(--dim); }
+.modal a { color: var(--accent); }
+
+.foot { border-top: 1px solid var(--line); margin-top: 32px; padding-top: 16px; font-size: 13px; color: var(--dim); }
+.foot p { margin: 0 0 6px; }
