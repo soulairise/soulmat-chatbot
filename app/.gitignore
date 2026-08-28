@@ -25,3 +25,9 @@ dist-ssr
 
 # 네이버 커머스 API 키
 .env
+
+# 네이버 커머스 API 원본 응답 — 절대 커밋 금지.
+# 주문/문의 API 응답에는 구매자 이름·주소·연락처가 들어있고
+# 이 저장소는 GitHub Pages 때문에 공개다.
+# 사람이 확인해 만든 청크(chunks.source.json)만 저장소에 들어간다.
+src/data/sources/
