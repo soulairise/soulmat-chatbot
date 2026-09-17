@@ -4,6 +4,7 @@ import { CHAT_MODEL, EMBED_MODEL, checkOllama, embedQuery, streamChat } from './
 import type { OllamaStatus } from './lib/ollama'
 import { buildSystemPrompt, buildUserPrompt } from './lib/prompt'
 import { judge } from './lib/judge'
+import { productClarification } from './lib/productScope'
 import type { DocStore, Hit, Judgement, Retrieval } from './lib/types'
 import './styles.css'
 
@@ -78,6 +79,13 @@ export default function App() {
     if (!store || !bm25 || busy) return
     const q = question.trim()
     if (!q) return
+
+    const clarification = productClarification(q)
+    if (clarification) {
+      setTurns((ts) => [...ts, { id: Date.now(), question: q, answer: clarification, stage: 'done' }])
+      setInput('')
+      return
+    }
 
     const id = Date.now()
     setTurns((ts) => [...ts, { id, question: q, answer: '', stage: 'embedding' }])
