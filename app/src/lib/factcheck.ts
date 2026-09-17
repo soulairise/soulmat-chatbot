@@ -92,6 +92,23 @@ export function unsupportedBrandClaim(answer: string, chunks: string[]): string[
   return [...hits]
 }
 
+/**
+ * 답변에 **거절의 흔적이 하나라도 있는가.**
+ *
+ * 판정기가 "베이지색 후면은 무슨 색인가요?" 에 또박또박 답한 답변을 refusal=true 로
+ * 찍었다. 그 답이 "소울매트 **공개 자료에 따르면**…" 으로 시작하는데, 2b 판정기가
+ * 여기 든 "자료" 를 거절 신호로 본 것이다. 판정기의 reason 에는 답을 제대로 읽은
+ * 내용이 적혀 있었다. 이해는 했는데 플래그만 틀린 것이다. (EXP-19)
+ *
+ * 이건 세어 보면 아는 것이다. 규칙 4 가 거절할 때 정해진 문장을 쓰도록 강제하고,
+ * 모델이 바꿔 말하더라도 "확인되지 않는다" 류의 말은 반드시 들어간다.
+ * 그런 말이 **하나도 없으면** 그 답변은 거절이 아니다.
+ */
+const REFUSAL_MARK =
+  /확인되지\s?않|확인할\s?수\s?없|확인이\s?어렵|알\s?수\s?없|명시되(어|지)\s?있지\s?않|포함되(어|지)\s?있지\s?않|제공되지\s?않|나와\s?있지\s?않|정보가\s?없|내용은?\s?없|0507-1316-1623|고객센터.{0,10}문의|톡톡.{0,10}문의/
+
+export const looksLikeRefusal = (answer: string): boolean => REFUSAL_MARK.test(answer)
+
 export type FactCheck = { numbers: string[]; brands: string[]; ok: boolean }
 
 export function factCheck(answer: string, chunks: string[]): FactCheck {

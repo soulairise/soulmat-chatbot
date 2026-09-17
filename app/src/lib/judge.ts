@@ -1,5 +1,5 @@
 import { chatJson } from './ollama'
-import { type FactCheck, factCheck } from './factcheck'
+import { type FactCheck, factCheck, looksLikeRefusal } from './factcheck'
 import { REFUSAL_LINE } from './prompt'
 import type { Judgement, Retrieval } from './types'
 
@@ -63,14 +63,17 @@ const JUDGE_SYSTEM = [
 ].join('\n')
 
 /** 원자 판단을 규칙으로 조합한다. 이 조합은 모델이 아니라 코드가 책임진다. */
-function compose(a: Atoms, cited: boolean, fc: FactCheck): Judgement {
+function compose(a: Atoms, cited: boolean, fc: FactCheck, refusalMark: boolean): Judgement {
+  // 판정기가 refusal 을 **켜는 쪽으로만** 틀린다. 답변에 거절의 흔적이 하나도 없으면
+  // 거절이 아니다. 한 방향으로만 고친다 — false 를 true 로 올리지는 않는다.
+  const refusal = a.refusal && refusalMark
   // 모델의 판단과 코드의 검사 중 **하나라도** 걸리면 근거 없음이다.
   // 코드 쪽은 세어 본 결과라 모델보다 신뢰도가 높다.
   const grounded = !a.hallucinated && fc.ok
-  const justifiedRefusal = a.refusal && !a.answerable
-  const missedRefusal = a.refusal && a.answerable
+  const justifiedRefusal = refusal && !a.answerable
+  const missedRefusal = refusal && a.answerable
 
-  const relevance: 0 | 1 | 2 = a.refusal ? (justifiedRefusal ? 2 : 0) : a.covered
+  const relevance: 0 | 1 | 2 = refusal ? (justifiedRefusal ? 2 : 0) : a.covered
 
   let verdict: Judgement['verdict']
   if (!grounded) verdict = 'fail'
@@ -100,7 +103,7 @@ function compose(a: Atoms, cited: boolean, fc: FactCheck): Judgement {
   return {
     grounded,
     cited,
-    refusal: a.refusal,
+    refusal,
     relevance,
     verdict,
     reason: note ? `${note} ${a.reason}` : a.reason,
@@ -138,5 +141,5 @@ export async function judge(
   // 오탐 8건이 전부 이 번호 하나 때문이었다.
   const sources = [...r.hits.map((h) => h.chunk.text), REFUSAL_LINE]
 
-  return compose(atoms, CITATION_RE.test(answer), factCheck(answer, sources))
+  return compose(atoms, CITATION_RE.test(answer), factCheck(answer, sources), looksLikeRefusal(answer))
 }
