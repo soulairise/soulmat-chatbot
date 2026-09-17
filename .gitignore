@@ -2,3 +2,6 @@ node_modules/
 dist/
 .DS_Store
 *.local
+
+# wrangler 로컬 캐시·상태. 계정 정보가 섞일 수 있어 올리지 않는다.
+worker/.wrangler/
