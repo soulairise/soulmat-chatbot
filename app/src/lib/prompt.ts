@@ -1,4 +1,5 @@
 import type { Hit, Retrieval } from './types'
+import { classify, intentDirective } from './intent'
 import { WEAK_EVIDENCE_THRESHOLD } from './rag'
 
 export const REFUSAL_LINE =
@@ -51,6 +52,11 @@ export function buildUserPrompt(question: string, r: Retrieval): string {
       '자료로 확인되는 범위만 말하거나 규칙 4의 안내 문구를 사용하세요.',
     )
   }
+
+  // 의도 한 줄은 질문 **앞**에 둔다. 질문이 마지막에 오게 하려는 것이다.
+  // 질문 뒤에 지시를 붙였을 때 모델이 자료 대신 지시를 읽는 것을 이미 보았다.
+  const directive = intentDirective(classify(question))
+  if (directive) parts.push('', directive)
 
   parts.push('', `[질문] ${question}`)
   return parts.join('\n')
