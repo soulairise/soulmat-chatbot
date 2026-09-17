@@ -1,4 +1,6 @@
 import { chatJson } from './ollama'
+import { type FactCheck, factCheck } from './factcheck'
+import { REFUSAL_LINE } from './prompt'
 import type { Judgement, Retrieval } from './types'
 
 /**
@@ -42,6 +44,10 @@ const JUDGE_SYSTEM = [
   '당신은 RAG 답변을 검사하는 심사자입니다. 문체나 친절함은 보지 않습니다.',
   '아래 4가지를 서로 독립적으로 판단하세요. 종합 평가는 하지 마세요.',
   '',
+  // 여기에 제품범위 규칙을 한 줄 더 넣었다가 19/23 → 11/23 이 되었다.
+  // 더 정교하게 여섯 줄로 늘렸더니 8/23 이 되었다. 지시문을 늘릴수록 2b 판정기는
+  // "제품 이름이 둘 이상이면 일단 true" 쪽으로 무너진다. (EXP-09, EXP-11)
+  // 그래서 제품범위·수치 검사는 모델에서 빼고 아래 코드로 내렸다.
   'hallucinated — [답변]에 [자료]로 확인되지 않는 사실 주장(수치, 조건, 효과 등)이 하나라도 있으면 true.',
   '               "자료에 없다"고 말한 것은 사실 주장이 아니므로 hallucinated가 아닙니다.',
   '',
@@ -57,28 +63,39 @@ const JUDGE_SYSTEM = [
 ].join('\n')
 
 /** 원자 판단을 규칙으로 조합한다. 이 조합은 모델이 아니라 코드가 책임진다. */
-function compose(a: Atoms, cited: boolean): Judgement {
-  const grounded = !a.hallucinated
+function compose(a: Atoms, cited: boolean, fc: FactCheck): Judgement {
+  // 모델의 판단과 코드의 검사 중 **하나라도** 걸리면 근거 없음이다.
+  // 코드 쪽은 세어 본 결과라 모델보다 신뢰도가 높다.
+  const grounded = !a.hallucinated && fc.ok
   const justifiedRefusal = a.refusal && !a.answerable
   const missedRefusal = a.refusal && a.answerable
 
   const relevance: 0 | 1 | 2 = a.refusal ? (justifiedRefusal ? 2 : 0) : a.covered
 
   let verdict: Judgement['verdict']
-  if (a.hallucinated) verdict = 'fail'
+  if (!grounded) verdict = 'fail'
   else if (justifiedRefusal) verdict = 'pass'
   else if (missedRefusal) verdict = 'fail'
   else if (a.covered === 2) verdict = cited ? 'pass' : 'warn'
   else if (a.covered === 1) verdict = 'warn'
   else verdict = 'fail'
 
+  const factNote = [
+    fc.numbers.length ? `자료에 없는 숫자: ${fc.numbers.join(', ')}` : '',
+    fc.brands.length ? `자료에 없는 브랜드를 단정: ${fc.brands.join(', ')}` : '',
+  ]
+    .filter(Boolean)
+    .join(' / ')
+
   const note = justifiedRefusal
     ? '자료 범위 밖 질문에 대한 정당한 거절.'
     : missedRefusal
       ? '자료에 답이 있는데도 거절했다.'
-      : a.hallucinated
-        ? '자료로 확인되지 않는 주장이 포함되었다.'
-        : ''
+      : factNote
+        ? factNote
+        : a.hallucinated
+          ? '자료로 확인되지 않는 주장이 포함되었다.'
+          : ''
 
   return {
     grounded,
@@ -116,5 +133,10 @@ export async function judge(
     signal,
   )
 
-  return compose(atoms, CITATION_RE.test(answer))
+  // 거절 문구의 고객센터 번호는 우리 템플릿에서 온 값이지 모델이 지어낸 것이 아니다.
+  // 자료에만 없다고 잡으면 정당한 거절이 전부 fail 이 된다. EXP-12 에서 실제로 그랬고,
+  // 오탐 8건이 전부 이 번호 하나 때문이었다.
+  const sources = [...r.hits.map((h) => h.chunk.text), REFUSAL_LINE]
+
+  return compose(atoms, CITATION_RE.test(answer), factCheck(answer, sources))
 }

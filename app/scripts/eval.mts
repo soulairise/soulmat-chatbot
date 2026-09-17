@@ -12,6 +12,15 @@ import { embedQuery, streamChat } from '../src/lib/ollama'
 import type { DocStore } from '../src/lib/types'
 
 const name = process.argv[2] || 'baseline'
+/**
+ * 같은 설정을 몇 번 돌릴지. 설정을 **비교**할 때는 3 이상을 쓴다.
+ *
+ * temperature=0 이라도 회차마다 판정이 갈린다. 생성과 판정을 모두 로컬 2b 모델이
+ * 하기 때문이다. 1회 측정으로 EXP-07(20/23)과 EXP-08(14/23)을 비교하려다,
+ * 같은 설정을 다시 돌리면 또 다른 숫자가 나온다는 걸 뒤늦게 확인했다.
+ * 폭보다 작은 차이는 설정의 효과가 아니다.
+ */
+const repeat = Math.max(1, Number(process.argv.find((a) => a.startsWith('--repeat='))?.split('=')[1] ?? process.argv[process.argv.indexOf('--repeat') + 1] ?? 1) || 1)
 
 /** 고정 질문 세트 — 자료 직답 / 여러 청크 연결 / 자료 밖 3종을 섞는다. */
 const QUESTIONS: { q: string; kind: '직답' | '연결' | '자료밖' | '채널' | '실문의' }[] = [
@@ -46,44 +55,83 @@ const store: DocStore = JSON.parse(
 )
 const bm25 = new BM25(store.chunks)
 
-const rows: string[] = []
-let pass = 0
+/** 문항별 회차 기록. 한 번 돌린 숫자로는 설정을 비교할 수 없어 회차를 다 남긴다. */
+type Trial = { verdict: string; cited: boolean; grounded: boolean; relevance: number; answer: string }
+const trials = new Map<string, Trial[]>()
+const meta = new Map<string, { kind: string; maxCosine: number; weak: boolean; top: string }>()
+const perRun: number[] = []
 const t0 = Date.now()
 
-for (const { q, kind } of QUESTIONS) {
-  const qv = await embedQuery(q)
-  const r = retrieve(store, bm25, q, qv, TOP_K)
-  const answer = await streamChat(
-    [
-      { role: 'system', content: buildSystemPrompt() },
-      { role: 'user', content: buildUserPrompt(q, r) },
-    ],
-    () => {},
-  )
-  const j = await judge(q, answer, r)
-  if (j.verdict === 'pass') pass++
+for (let run = 1; run <= repeat; run++) {
+  let pass = 0
+  if (repeat > 1) console.log(`\n── ${run}회차 ──────────────`)
+  for (const { q, kind } of QUESTIONS) {
+    const qv = await embedQuery(q)
+    const r = retrieve(store, bm25, q, qv, TOP_K)
+    const answer = await streamChat(
+      [
+        { role: 'system', content: buildSystemPrompt() },
+        { role: 'user', content: buildUserPrompt(q, r) },
+      ],
+      () => {},
+    )
+    const j = await judge(q, answer, r)
+    if (j.verdict === 'pass') pass++
 
-  const ok = j.verdict === 'pass' ? 'PASS' : j.verdict.toUpperCase()
-  console.log(`${ok.padEnd(5)} [${kind}] ${q}  (cos ${r.maxCosine.toFixed(3)})`)
+    if (!trials.has(q)) trials.set(q, [])
+    trials.get(q)!.push({ verdict: j.verdict, cited: j.cited, grounded: j.grounded, relevance: j.relevance, answer })
+    // 검색은 질문에 대해 결정적이므로 첫 회차 값만 남긴다.
+    if (!meta.has(q)) meta.set(q, { kind, maxCosine: r.maxCosine, weak: r.weakEvidence, top: r.hits[0].chunk.id })
 
-  rows.push(
-    `| ${kind} | ${q} | ${r.maxCosine.toFixed(3)} | ${r.weakEvidence ? '약함' : '충분'} | ${r.hits[0].chunk.id} | ${j.cited ? 'O' : 'X'} | ${j.refusal ? 'O' : 'X'} | ${j.grounded ? 'O' : 'X'} | ${j.relevance} | **${j.verdict}** | ${answer.replace(/\n/g, ' ').replace(/\|/g, '/').slice(0, 110)}… |`,
-  )
+    const ok = j.verdict === 'pass' ? 'PASS' : j.verdict.toUpperCase()
+    console.log(`${ok.padEnd(5)} [${kind}] ${q}  (cos ${r.maxCosine.toFixed(3)})`)
+  }
+  perRun.push(pass)
+  if (repeat > 1) console.log(`  ${run}회차 pass ${pass}/${QUESTIONS.length}`)
 }
 
 const secs = ((Date.now() - t0) / 1000).toFixed(0)
+const n = QUESTIONS.length
+const mean = perRun.reduce((a, b) => a + b, 0) / perRun.length
+const lo = Math.min(...perRun)
+const hi = Math.max(...perRun)
+const spreadPp = (((hi - lo) / n) * 100).toFixed(1)
+
+/** 회차마다 판정이 갈린 문항. 여기 있는 것은 그 문항 자체가 불안정하다는 뜻이다. */
+const unstable = [...trials.entries()].filter(([, ts]) => new Set(ts.map((t) => t.verdict)).size > 1)
+
+const rows = QUESTIONS.map(({ q }) => {
+  const ts = trials.get(q)!
+  const m = meta.get(q)!
+  const passN = ts.filter((t) => t.verdict === 'pass').length
+  const seq = ts.map((t) => ({ pass: 'P', warn: 'W', fail: 'F' })[t.verdict] ?? '?').join('')
+  const last = ts[ts.length - 1]
+  const rate = repeat > 1 ? `${passN}/${repeat} \`${seq}\`` : `**${last.verdict}**`
+  return `| ${m.kind} | ${q} | ${m.maxCosine.toFixed(3)} | ${m.weak ? '약함' : '충분'} | ${m.top} | ${last.cited ? 'O' : 'X'} | ${last.grounded ? 'O' : 'X'} | ${last.relevance} | ${rate} | ${last.answer.replace(/\n/g, ' ').replace(/\|/g, '/').slice(0, 110)}… |`
+})
+
 const md = [
   `# 실험 ${name}`,
   '',
-  `- 고정 질문 ${QUESTIONS.length}문항 (직답 5 / 연결 3 / 자료밖 4 / 채널 4 / 실제 고객문의 7)`,
-  `- 임베딩 ${store.model} ${store.dim}차원 · 청크 ${store.chunks.length}개`,
-  `- pass ${pass}/${QUESTIONS.length} · 총 ${secs}초`,
+  `- 고정 질문 ${n}문항 (직답 5 / 연결 3 / 자료밖 4 / 채널 4 / 실제 고객문의 7) · **${repeat}회 반복**`,
+  `- 임베딩 ${store.model} ${store.dim}차원 · 청크 ${store.chunks.length}개 · 생성/판정 qwen3.5:2b temperature=0`,
+  `- pass 평균 **${mean.toFixed(1)}/${n}** (${(((mean / n) * 100)).toFixed(1)}%) · 회차별 ${perRun.join(' · ')} · 폭 ${spreadPp}%p · 총 ${secs}초`,
   '',
-  '| 유형 | 질문 | 최고코사인 | 근거 | 1위청크 | cited | refusal | grounded | relevance | verdict | 답변(발췌) |',
-  '|---|---|---|---|---|---|---|---|---|---|---|',
+  repeat > 1
+    ? `> **폭이 ${spreadPp}%p 다.** 이보다 작은 차이는 설정을 바꿔 얻은 것이 아니라 흔들림이다.\n> 회차마다 판정이 갈린 문항 ${unstable.length}개: ${unstable.map(([q]) => q).join(' / ') || '없음'}`
+    : '> **1회 측정이다. 이 숫자로 다른 설정과 비교하지 말 것.** `--repeat 3` 이상으로 다시 재라.',
+  '',
+  `| 유형 | 질문 | 최고코사인 | 근거 | 1위청크 | cited | grounded | relevance | ${repeat > 1 ? 'pass율' : 'verdict'} | 답변(발췌) |`,
+  '|---|---|---|---|---|---|---|---|---|---|',
   ...rows,
 ].join('\n')
 
 mkdirSync(new URL('../results/', import.meta.url), { recursive: true })
 writeFileSync(new URL(`../results/${name}.md`, import.meta.url), md)
-console.log(`\npass ${pass}/${QUESTIONS.length} · ${secs}초 → results/${name}.md`)
+console.log(
+  `\npass 평균 ${mean.toFixed(1)}/${n} · 회차별 ${perRun.join(' · ')} · 폭 ${spreadPp}%p · ${secs}초 → results/${name}.md`,
+)
+if (repeat > 1 && unstable.length) {
+  console.log(`판정이 갈린 문항 ${unstable.length}개:`)
+  for (const [q, ts] of unstable) console.log(`  ${ts.map((t) => t.verdict).join(' → ')}  ${q}`)
+}
