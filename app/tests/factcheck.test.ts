@@ -1,6 +1,6 @@
 import { test } from 'node:test'
 import { strict as assert } from 'node:assert'
-import { factCheck, unsupportedBrandClaim, unsupportedNumbers } from '../src/lib/factcheck.ts'
+import { factCheck, looksLikeRefusal, unsupportedBrandClaim, unsupportedNumbers } from '../src/lib/factcheck.ts'
 
 /**
  * EXP-09/EXP-11 에서 판정기가 잡아야 했던 것과, 잘못 깎았던 것을 그대로 옮겨 놓았다.
@@ -72,3 +72,23 @@ test('오늘 날짜는 숫자로 세지 않는다', () => {
   const a = `오늘 ${now.getFullYear()}년 ${now.getMonth() + 1}월 ${now.getDate()}일 기준 재고는 확인할 수 없습니다.`
   assert.deepEqual(unsupportedNumbers(a, 반품자료), [])
 })
+
+/* ── 거절 표지 (EXP-19: 판정기가 멀쩡한 답을 refusal=true 로 찍었다) ── */
+
+test('또박또박 답한 답변은 거절이 아니다', () => {
+  const a = '소울매트 공개 자료에 따르면 필라테스 리포머 매트는 베이지색을 옵션으로 구매할 수 있으며, 그 제품의 후면은 천연고무로 되어 있고 색상이 검정색입니다 [1].'
+  assert.equal(looksLikeRefusal(a), false)
+})
+
+test('"공개 자료에 따르면"이 들어갔다고 거절이 아니다', () => {
+  assert.equal(looksLikeRefusal('소울매트 공개 자료에 따르면 배송비는 3,000원입니다 [1].'), false)
+})
+
+for (const a of [
+  '소울매트 공개 자료에서 확인되지 않는 내용입니다. 정확한 안내가 필요하시면 소울매트 고객센터(0507-1316-1623) 또는 네이버 톡톡으로 문의해 주세요.',
+  '소울매트 공개 자료에서 루루레몬 매트와 비교한 내용은 없습니다.',
+  '재입고 일정은 공개된 안내 자료에 나와 있지 않습니다.',
+  '실시간 재고는 공개 자료로는 알 수 없습니다.',
+]) {
+  test(`거절은 거절로 본다: ${a.slice(0, 26)}…`, () => assert.equal(looksLikeRefusal(a), true))
+}
