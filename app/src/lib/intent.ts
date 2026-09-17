@@ -68,23 +68,17 @@ export const POLICY: Record<Intent, IntentPolicy> = {
   반품_비용_질문: { channelSensitive: true, productSpecific: false, needsLookup: false },
   교환_방법_질문: { channelSensitive: true, productSpecific: false, needsLookup: false },
   상품_가격_질문: { channelSensitive: true, productSpecific: true, needsLookup: false },
-  채널_취급_질문: {
-    channelSensitive: true,
-    productSpecific: false,
-    needsLookup: false,
-    note: '어느 채널에서 취급하고 어느 채널에서 취급하지 않는지를 각각 밝히세요. 한쪽 채널만 보고 "판매하지 않습니다"라고 답하지 마세요.',
-  },
+  // note 를 달았다가 뺐다. "어느 채널에서 취급하고 아닌지 각각 밝히세요" 가 오히려
+  // 단정을 유도해 pass → warn 이 됐다 (EXP-17). 채널 구분은 시스템 규칙 7 로 충분하다.
+  채널_취급_질문: { channelSensitive: true, productSpecific: false, needsLookup: false },
   상품_색상_질문: { channelSensitive: false, productSpecific: true, needsLookup: false },
   상품_치수_질문: { channelSensitive: false, productSpecific: true, needsLookup: false },
   상품_재질_질문: { channelSensitive: false, productSpecific: true, needsLookup: false },
   관리_세탁_질문: { channelSensitive: false, productSpecific: true, needsLookup: false },
   사용_환경_질문: { channelSensitive: false, productSpecific: true, needsLookup: false },
-  상품_비교_질문: {
-    channelSensitive: false,
-    productSpecific: true,
-    needsLookup: false,
-    note: '비교 대상 제품 각각의 자료를 인용해 항목별로 답하세요. 한쪽 제품의 자료만으로 둘을 비교하지 마세요.',
-  },
+  // note 를 달았다가 뺐다. "항목별로 답하세요" 가 번호 목록을 유도해 답이 길어졌고
+  // 3~5문장 규칙과 부딪혀 pass → fail 이 됐다 (EXP-17).
+  상품_비교_질문: { channelSensitive: false, productSpecific: true, needsLookup: false },
   단체_견적_질문: {
     channelSensitive: false,
     productSpecific: false,
@@ -186,28 +180,27 @@ export function classify(question: string): Classification {
 }
 
 /**
- * 분류 결과를 프롬프트에 얹을 문장으로 바꾼다.
+ * 분류 결과를 프롬프트에 얹을 **한 줄**로 바꾼다. 없으면 빈 문자열이다.
  * 경로를 바꾸지 않고 지시만 더한다 — 답은 여전히 자료가 만든다.
+ *
+ * 처음에는 의도마다 최대 네 줄(조회·채널·제품·비고)을 붙이게 썼다. 그러나 같은 날
+ * 판정기에서 지시문을 늘릴수록 무너지는 것을 보았고(19→11→8), 답변 프롬프트에서도
+ * 질문 뒤에 긴 문단을 붙였다가 쿠션감 유무를 뒤집고 없는 색을 지어내는 걸 보았다(18→20).
+ * 2b 모델에게 지시를 더 주는 것은 거의 항상 손해다.
+ *
+ * 그래서 두 가지를 버렸다.
+ *   - 채널 안내 → 시스템 규칙 7 이 이미 말한다
+ *   - 제품 범위 → 시스템 규칙 8·9 가 이미 말한다
+ * 같은 말을 두 번 하면 분량만 늘고 지켜지지는 않는다.
+ *
+ * 남긴 것은 **일반 규칙이 다루지 못하는 것**뿐이다. 공개 자료로는 원리상 알 수 없는
+ * 의도(재고·재입고·주문상태)와, 그 의도에서만 필요한 개별 지시다.
  */
-export function intentDirective(c: Classification): string[] {
-  if (c.intent === '기타') return []
-
-  const lines = [`[의도] ${c.intent}`]
+export function intentDirective(c: Classification): string {
+  if (c.intent === '기타') return ''
   if (c.policy.needsLookup) {
-    lines.push(
-      '이 의도는 공개 자료로는 원리상 확인할 수 없는 내용입니다. 자료에서 비슷한 내용을 찾아 끼워 맞추지 말고, 확인할 수 있는 곳을 안내하세요.',
-    )
+    return `[의도] ${c.intent} — 이 질문은 공개 자료로는 확인할 수 없는 내용입니다. 비슷한 자료를 끼워 맞추지 말고 확인할 곳을 안내하세요.`
   }
-  if (c.policy.channelSensitive) {
-    lines.push(
-      '이 의도는 자사몰(soulmat.kr)과 네이버 스마트스토어의 값이 다릅니다. 질문에 채널이 없으면 두 채널을 모두 밝히고, 각각 어느 자료에서 나온 값인지 번호를 다세요.',
-    )
-  }
-  if (c.policy.productSpecific) {
-    lines.push(
-      '이 의도는 제품마다 값이 다릅니다. 자료에 적힌 정확한 제품명을 쓰고, 한 제품의 값을 다른 제품이나 전체로 넓히지 마세요.',
-    )
-  }
-  if (c.policy.note) lines.push(c.policy.note)
-  return lines
+  if (c.policy.note) return `[의도] ${c.intent} — ${c.policy.note}`
+  return ''
 }
