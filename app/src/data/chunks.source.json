@@ -1,81 +1,494 @@
-[{"id": "SM-001", "section": "브랜드", "url": "https://soulmat.kr/", "text": "소울매트(soulmat.kr)는 요가매트 전문 브랜드이자 요가·필라테스 용품 전문몰입니다. 사업자 상호는 소울메이트이며 대표전화는 0507-1316-1623입니다."},
-{"id": "SM-002", "section": "브랜드", "url": "https://soulmat.kr/shopinfo/company.html", "text": "소울매트의 사업장 주소는 서울특별시 강서구 양천로 564 등촌동두산위브센티움 1005호입니다. 반품 주소도 동일합니다."},
-{"id": "SM-003", "section": "브랜드", "url": "https://soulmat.kr/", "text": "소울매트는 '지구와 수련자를 위한 친환경 소재'를 브랜드 원칙으로 삼아 천연고무와 스웨이드 소재를 사용합니다."},
-{"id": "SM-004", "section": "브랜드", "url": "https://soulmat.kr/product/list.html?cate_no=42", "text": "소울매트의 천연고무 매트는 요가 강사가 직접 제작합니다. 상품 요약 문구에 '요가 강사가 제작하는 천연고무매트'로 표기되어 있습니다."},
-{"id": "SM-005", "section": "제품군", "url": "https://soulmat.kr/", "text": "소울매트 자사몰의 상품 카테고리는 트래블매트, 미니매트, 리포머매트, PU 매트, 요가용품(요가링·요가양말·요가타올·요가밴드·요가휠), 강사/업체전용으로 구성되어 있습니다."},
-{"id": "SM-010", "section": "트래블매트", "url": "https://soulmat.kr/product/detail.html?product_no=102", "text": "자사몰(soulmat.kr) 기준으로, 트래블 요가매트 1mm의 판매가는 59,800원입니다. 소비자가는 99,800원입니다."},
-{"id": "SM-011", "section": "트래블매트", "url": "https://soulmat.kr/product/detail.html?product_no=102", "text": "트래블 요가매트 1mm는 색상 15종으로 판매됩니다. 이 중 무늬가 있는 패턴 색상은 11종입니다. 드림캐쳐그린, 밀키웨이, 만다라, 가네샤, 차크라, 드림캐처브라운, 파드마플라워, 핑크몬스테라, 파드마트리니, 레인보우, 트윈클컬러입니다."},
-{"id": "SM-011B", "section": "트래블매트", "url": "https://soulmat.kr/product/detail.html?product_no=102", "text": "트래블 요가매트 1mm의 색상 15종 가운데 무늬가 없는 민무늬 색상은 4종입니다. 블루레이크, 옴 그레이, 물란다라 핑크, 아즈나 네이비입니다."},
-{"id": "SM-012", "section": "트래블매트", "url": "https://soulmat.kr/product/detail.html?product_no=102", "text": "트래블 요가매트는 윗면이 스웨이드 재질이고 바닥면이 천연고무인 2중 구조입니다. 두께는 1mm입니다."},
-{"id": "SM-013", "section": "트래블매트", "url": "https://soulmat.kr/product/detail.html?product_no=102", "text": "트래블 요가매트 1mm는 접어서 가방에 넣을 수 있어 여행용·홈트용으로 휴대가 간편합니다."},
-{"id": "SM-014", "section": "트래블매트", "url": "https://soulmat.kr/product/detail.html?product_no=102", "text": "트래블 요가매트는 바닥이 천연고무라 들뜨지 않고 바닥에 밀착됩니다. 윗면 스웨이드는 땀 흡수가 잘 되고 미끄럽지 않으며 청소가 쉽습니다."},
-{"id": "SM-015", "section": "트래블매트", "url": "https://soulmat.kr/product/detail.html?product_no=102", "text": "트래블 요가매트는 요가매트 단독으로도, 요가매트 타월로도 사용할 수 있습니다. 요가원에서 공용 매트 위에 자기 매트로 겹쳐 쓸 수 있습니다."},
-{"id": "SM-016", "section": "트래블매트", "url": "https://soulmat.kr/product/detail.html?product_no=102", "text": "트래블 요가매트는 물세탁이 가능해 위생적입니다. 다만 세탁 후에는 반드시 그늘에 말려야 합니다."},
-{"id": "SM-017", "section": "트래블매트", "url": "https://soulmat.kr/product/detail.html?product_no=102", "text": "트래블 요가매트는 1mm의 얇은 매트입니다. 두꺼운 매트를 원하는 경우에는 다른 카테고리의 제품을 확인해야 합니다."},
-{"id": "SM-018", "section": "트래블매트", "url": "https://soulmat.kr/product/detail.html?product_no=41", "text": "컬러플트라이앵클 스웨이드 요가매트는 두께 3mm 제품이며 판매가는 59,800원입니다."},
-{"id": "SM-020", "section": "미니매트", "url": "https://soulmat.kr/product/list.html?cate_no=45", "text": "자사몰(soulmat.kr) 기준으로, 소울매트 미니매트의 판매가는 38,600원입니다. 소비자가는 77,200원입니다."},
-{"id": "SM-021", "section": "미니매트", "url": "https://soulmat.kr/product/list.html?cate_no=45", "text": "미니매트는 요가수트라, 아쉬탕가, 천부경 디자인으로 판매되고 있습니다."},
-{"id": "SM-022", "section": "미니매트", "url": "https://soulmat.kr/product/detail.html?product_no=52", "text": "미니매트는 요가 및 명상 수련을 위한 컴팩트한 크기의 천연고무 매트입니다."},
-{"id": "SM-030", "section": "리포머매트", "url": "https://soulmat.kr/product/detail.html?product_no=50", "text": "자사몰(soulmat.kr) 기준으로, 필라테스 리포머 매트의 판매가는 38,800원입니다. 소비자가는 77,600원입니다."},
-{"id": "SM-031", "section": "리포머매트", "url": "https://soulmat.kr/product/detail.html?product_no=50", "text": "필라테스 리포머 매트는 천연고무 스웨이드 소재의 1mm 제품이며, 리포머 기구 위에 깔아 쓰는 논슬립 매트입니다."},
-{"id": "SM-032", "section": "리포머매트", "url": "https://soulmat.kr/product/detail.html?product_no=50", "text": "필라테스 리포머 매트의 용도는 필라테스 기구 위에서 자기 매트를 사용해 위생을 지키는 것입니다."},
-{"id": "SM-033", "section": "리포머매트", "url": "https://soulmat.kr/product/list.html?cate_no=70", "text": "필라테스 리포머 매트는 그레이, 네이비, 핑크 색상으로 판매되고 있습니다."},
-{"id": "SM-040", "section": "요가타올", "url": "https://soulmat.kr/product/detail.html?product_no=83", "text": "소울매트 요가타올의 판매가는 59,800원입니다. 소비자가는 99,800원입니다."},
-{"id": "SM-041", "section": "요가타올", "url": "https://soulmat.kr/product/detail.html?product_no=83", "text": "소울매트 요가타올은 요가매트 1mm와 같은 구조입니다. 윗면은 땀 흡수가 잘 되는 스웨이드 재질이고 아래쪽은 천연고무입니다."},
-{"id": "SM-042", "section": "요가타올", "url": "https://soulmat.kr/product/detail.html?product_no=83", "text": "요가타올은 단독 매트로도 사용할 수 있고, 기존에 쓰던 요가매트 위에 얹어서도 사용할 수 있습니다. 아래면 천연고무가 기존 매트에 밀착됩니다."},
-{"id": "SM-043", "section": "요가타올", "url": "https://soulmat.kr/product/detail.html?product_no=83", "text": "요가타올 윗면의 스웨이드는 땀이 흐르면 오히려 밀착력이 높아져 밀리지 않습니다. 세탁 후에는 반드시 그늘에 말려야 합니다."},
-{"id": "SM-044", "section": "요가타올", "url": "https://soulmat.kr/product/detail.html?product_no=83", "text": "요가타올의 색상은 파드마트리니, 레인보우, 블루레이크, 트윈클컬러, 옴 그레이, 물란다라 핑크, 아즈나 네이비 7종입니다."},
-{"id": "SM-050", "section": "요가양말", "url": "https://soulmat.kr/product/detail.html?product_no=59", "text": "소울매트 필라테스 요가 양말(토삭스)의 판매가는 59,800원입니다."},
-{"id": "SM-051", "section": "요가양말", "url": "https://soulmat.kr/product/detail.html?product_no=59", "text": "요가 양말의 종류는 라운드삭스, 오픈토삭스, 리본커버토삭스, 오버니삭스 4종입니다."},
-{"id": "SM-052", "section": "요가양말", "url": "https://soulmat.kr/product/detail.html?product_no=59", "text": "요가 양말의 컬러는 연블루, 연핑크, 연퍼플, 연카키, 블랙, 핑크, 퍼플, 그레이, 네이비 9종입니다."},
-{"id": "SM-053", "section": "요가양말", "url": "https://soulmat.kr/product/detail.html?product_no=59", "text": "요가 양말은 바닥면에 떨어지지 않는 실리콘 논슬립 처리가 되어 있어 안정된 자세를 돕습니다."},
-{"id": "SM-054", "section": "요가양말", "url": "https://soulmat.kr/product/detail.html?product_no=59", "text": "요가 양말은 발바닥에 땀이 많은 분, 안정된 자세를 원하는 분, 발의 각질을 가리고 싶은 분, 잘 미끄러지는 분에게 권장됩니다."},
-{"id": "SM-055", "section": "요가양말", "url": "https://soulmat.kr/product/detail.html?product_no=59", "text": "오버니삭스는 기장 55cm로 무릎 위 허벅지 중간까지 오는 제품이며 아이와 어른 모두 사용할 수 있습니다."},
-{"id": "SM-060", "section": "요가용품", "url": "https://soulmat.kr/product/detail.html?product_no=58", "text": "소울매트 요가링(종아리 요가링·마사지링)의 판매가는 59,800원이며 색상은 화이트펄과 소프트퍼플 2종입니다."},
-{"id": "SM-061", "section": "요가용품", "url": "https://soulmat.kr/product/detail.html?product_no=62", "text": "소울매트 요가 밴드(힙밴드)의 판매가는 59,800원이며 5종 라텍스 세트와 고급 3종 세트 두 가지 구성으로 판매됩니다."},
-{"id": "SM-070", "section": "배송", "url": "https://soulmat.kr/shopinfo/guide.html", "text": "자사몰(soulmat.kr) 기준으로, 소울매트의 배송 방법은 택배이며 배송 지역은 전국입니다."},
-{"id": "SM-071", "section": "배송", "url": "https://soulmat.kr/shopinfo/guide.html", "text": "자사몰(soulmat.kr) 기준으로, 배송비는 주문 금액이 50,000원 미만일 때 3,000원이 추가됩니다. 주문 금액이 50,000원 이상이면 배송비가 없습니다. 네이버 스마트스토어는 배송비 정책이 다릅니다."},
-{"id": "SM-072", "section": "배송", "url": "https://soulmat.kr/shopinfo/guide.html", "text": "자사몰(soulmat.kr) 기준으로, 배송 기간은 1일에서 5일이 소요됩니다."},
-{"id": "SM-073", "section": "배송", "url": "https://soulmat.kr/shopinfo/guide.html", "text": "자사몰(soulmat.kr) 기준으로, 산간벽지나 도서지방은 별도의 추가 배송 금액이 발생할 수 있습니다."},
-{"id": "SM-080", "section": "교환반품", "url": "https://soulmat.kr/shopinfo/guide.html", "text": "자사몰(soulmat.kr) 기준으로, 교환 및 반품은 상품을 공급받은 날로부터 7일 이내에 신청할 수 있습니다. 가전제품의 경우 포장을 개봉하지 않은 상태여야 합니다."},
-{"id": "SM-081", "section": "교환반품", "url": "https://soulmat.kr/shopinfo/guide.html", "text": "상품의 표시·광고 내용과 실제 상품이 다른 경우에는 상품을 공급받은 날로부터 3개월 이내, 또는 그 사실을 안 날로부터 30일 이내에 교환·반품을 신청할 수 있습니다."},
-{"id": "SM-082", "section": "교환반품", "url": "https://soulmat.kr/shopinfo/guide.html", "text": "고객의 사용으로 상품이 훼손된 경우, 포장을 개봉했거나 포장이 훼손되어 상품 가치가 상실된 경우, 고객 책임으로 손상된 경우에는 교환·반품이 불가능합니다."},
-{"id": "SM-083", "section": "교환반품", "url": "https://soulmat.kr/shopinfo/guide.html", "text": "자사몰(soulmat.kr) 기준으로, 고객의 단순 변심으로 교환이나 반품을 하는 경우 상품 반송 비용은 고객이 부담합니다. 자사몰에는 반송 비용의 금액이 명시되어 있지 않습니다. 네이버 스마트스토어는 상품별로 반품비와 교환비 금액이 정해져 있습니다."},
-{"id": "SM-084", "section": "교환반품", "url": "https://soulmat.kr/shopinfo/guide.html", "text": "반품 주소는 서울특별시 강서구 양천로 564 등촌동두산위브센티움 1005호입니다."},
-{"id": "SM-085", "section": "환불", "url": "https://soulmat.kr/shopinfo/guide.html", "text": "자사몰(soulmat.kr) 기준으로, 반품 확인 여부를 확인한 후 3영업일 이내에 결제 금액을 환불합니다. 신용카드 결제는 승인 취소로 처리되며, 그 외 결제 수단은 결제일에 맞춰 청구되거나 익월에 환급됩니다."},
-{"id": "SM-090", "section": "문의", "url": "https://soulmat.kr/", "text": "소울매트 고객 문의 대표전화는 0507-1316-1623입니다. 네이버 톡톡과 카카오톡 상담도 이용할 수 있습니다."},
-{"id": "SM-091", "section": "문의", "url": "https://soulmat.kr/board/free/list.html?board_no=3", "text": "소울매트 자사몰에는 이용안내 FAQ 게시판이 있으며 비회원 구매, 비회원 주문 내역 조회, 주문번호 분실, 회원 탈퇴, 회원정보 수정, 아이디·비밀번호 분실, 주문 내역 조회, 반품·교환 배송비, 쿠폰 확인, 쿠폰 사용 방법 10개 항목을 다룹니다."},
-{"id": "SM-092", "section": "문의", "url": "https://soulmat.kr/board/consult/list.html", "text": "소울매트 자사몰에는 1:1 문의 게시판과 상품문의 게시판이 별도로 운영됩니다."},
-{"id": "SM-100", "section": "구매채널", "url": "https://soulmat.kr/product/detail.html?product_no=102", "text": "소울매트는 자사몰 soulmat.kr 외에 네이버 스마트스토어에서도 판매합니다. 스마트스토어 주소는 smartstore.naver.com/soulmat입니다."},
-{"id": "SM-101", "section": "구매채널", "url": "https://soulmat.kr/product/detail.html?product_no=102", "text": "소울매트 자사몰의 상품은 해외배송 가능 상품으로 표시되어 있습니다."},
-{"id": "SM-102", "section": "구매채널", "url": "https://soulmat.kr/product/detail.html?product_no=102", "text": "소울매트 자사몰에서는 1회 구매 외에 정기배송 신청도 가능합니다."},
-{"id": "SM-103", "section": "구매채널", "url": "https://soulmat.kr/board/free/list.html?board_no=5", "text": "소울매트는 요가강사와 사업자를 위한 회원신청 게시판을 운영하며, 강사/업체전용 상품 카테고리가 별도로 있습니다."},
-{"id": "NS-001", "section": "채널안내", "url": "https://smartstore.naver.com/soulmat", "text": "소울매트는 자사몰 soulmat.kr과 네이버 스마트스토어 두 곳에서 판매합니다. 두 채널은 배송비와 반품·교환 비용 정책이 서로 다릅니다. 비용을 안내할 때는 어느 채널에서 구매하는지 먼저 확인해야 합니다."},
-{"id": "NS-002", "section": "스마트스토어 배송", "url": "https://smartstore.naver.com/soulmat", "text": "네이버 스마트스토어 기준으로, 취급 상품 39개 중 27개는 배송비가 무료입니다. 나머지는 상품에 따라 2,900원 또는 3,500원의 배송비가 있습니다. 배송비는 상품마다 개별로 설정되어 있으므로 상품 페이지에서 확인해야 합니다."},
-{"id": "NS-003", "section": "스마트스토어 반품교환", "url": "https://smartstore.naver.com/soulmat", "text": "네이버 스마트스토어 기준으로, 반품비와 교환비는 상품마다 다릅니다. 가장 많은 상품(23개)은 반품비 3,000원, 교환비 6,000원입니다. 그 외 반품비 3,900원·교환비 7,800원, 반품비 3,400원·교환비 6,800원, 반품비 3,450원·교환비 6,900원, 반품비 2,990원·교환비 5,980원인 상품이 있습니다."},
-{"id": "NS-004", "section": "스마트스토어 반품교환", "url": "https://smartstore.naver.com/soulmat", "text": "네이버 스마트스토어에서 가장 일반적인 반품·교환 비용은 반품 3,000원, 교환 6,000원이며 요가매트류 대부분이 여기에 해당합니다. 정확한 금액은 각 상품 페이지에 표시됩니다."},
-{"id": "NS-010", "section": "스마트스토어 의류", "url": "https://smartstore.naver.com/soulmat", "text": "네이버 스마트스토어에서는 자사몰에 없는 요가 의류를 취급합니다. 여성 요가 하렘팬츠 19,800원, 여성 요가 필라테스 속바지 일체형 투인원 숏팬츠 29,800원, 여성 하이웨스트 숏팬츠 2.5부 37,500원, 여성 조거팬츠 요가바지 39,500원입니다."},
-{"id": "NS-011", "section": "스마트스토어 의류", "url": "https://smartstore.naver.com/soulmat", "text": "네이버 스마트스토어에서 소울매트 필라테스 요가 논슬립 크루삭스 4족 세트를 11,400원에 판매합니다."},
-{"id": "NS-020", "section": "스마트스토어 명상소품", "url": "https://smartstore.naver.com/soulmat", "text": "네이버 스마트스토어에서는 자사몰에 없는 명상·요가원 인테리어 소품을 취급합니다. 대나무 윈드차임 24,800원, 티베탄 월행잉 태피스트리 차크라 코튼 145cm 24,800원, 네팔 수제 황동 띵샤(명상종) 보관케이스 포함 29,800원입니다."},
-{"id": "NS-030", "section": "스마트스토어 매트", "url": "https://smartstore.naver.com/soulmat", "text": "네이버 스마트스토어에서는 자사몰에 없는 매트도 취급합니다. 아쉬탕가 빈야사 프라이머리 요가매트 78,800원, PU 요가매트 천연고무 5mm 58,000원, 지구매트·달매트 트래블 요가매트 1mm 59,800원입니다."},
-{"id": "NS-031", "section": "스마트스토어 매트", "url": "https://smartstore.naver.com/soulmat", "text": "네이버 스마트스토어에서 요가담요(명상담요, 아헹가 도구활용)를 26,000원에 취급합니다."},
-{"id": "NS-032", "section": "스마트스토어 매트", "url": "https://smartstore.naver.com/soulmat", "text": "네이버 스마트스토어의 미니매트 그룹 4mm는 요가수트라 다크네이비와 아쉬탕가 스카이가 38,600원, 천부경 그레이가 48,600원입니다."},
-{"id": "NS-040", "section": "스마트스토어 단체·렌탈", "url": "https://smartstore.naver.com/soulmat", "text": "네이버 스마트스토어에서 요가매트 1일 렌탈(대여)을 5,000원부터 제공합니다. 단체 행사, 기업, 학교, 야외요가용입니다."},
-{"id": "NS-041", "section": "스마트스토어 단체·렌탈", "url": "https://smartstore.naver.com/soulmat", "text": "네이버 스마트스토어에서 요가매트 단체주문 OEM과 자체로고 제작을 받습니다. 요가원, 주민센터, 정부기관 단체제작용이며 수량과 사양에 따라 견적이 달라집니다."},
-{"id": "NS-050", "section": "재고안내", "url": "https://smartstore.naver.com/soulmat", "text": "상품의 재고와 품절 여부는 이 안내 자료에 포함되어 있지 않습니다. 실시간 재고는 자사몰 또는 스마트스토어의 해당 상품 페이지에서 확인해야 합니다."},
-{"id": "NS-051", "section": "가격안내", "url": "https://smartstore.naver.com/soulmat", "text": "이 안내의 가격은 자료를 수집한 시점의 값입니다. 같은 상품이라도 자사몰과 스마트스토어의 표시 가격이나 할인율이 다를 수 있으므로, 결제 금액은 구매하는 채널의 상품 페이지에서 확인해야 합니다."},
-{"id": "CS-001", "section": "치수", "url": "https://smartstore.naver.com/soulmat/products/6999682361", "text": "트래블 요가매트 1mm의 사이즈는 가로 183cm, 세로 61cm입니다. 매트 크기를 묻는 질문의 답은 183×61cm입니다."},
-{"id": "CS-002", "section": "치수", "url": "https://smartstore.naver.com/soulmat/products/6999682361", "text": "트래블 요가매트는 일반적인 요가매트보다 가로가 2cm 정도 작게 제작되었습니다. 가지고 다니기 편하도록 만든 크기입니다."},
-{"id": "CS-003", "section": "사용환경", "url": "https://smartstore.naver.com/soulmat/products/6999682361", "text": "트래블 요가매트는 두께가 1mm이고 바닥면이 천연고무입니다. 해변 모래나 잔디밭 같은 곳에서는 그대로 깔아서 사용할 수 있습니다."},
-{"id": "CS-004", "section": "사용환경", "url": "https://smartstore.naver.com/soulmat/products/6999682361", "text": "트래블 요가매트는 두께가 1mm이므로 도로처럼 딱딱한 바닥에서는 쿠션감이 거의 없어 딱딱하게 느껴질 수 있습니다. 쿠션감이 필요한 환경에는 적합하지 않습니다."},
-{"id": "CS-005", "section": "사용환경", "url": "https://smartstore.naver.com/soulmat/products/6999682361", "text": "요가원이나 집에서 사용할 때는 트래블 요가매트를 요가타월처럼 기존 매트 위에 얹어서 사용하기도 합니다."},
-{"id": "CS-010", "section": "세탁", "url": "https://smartstore.naver.com/soulmat/products/5367773261", "text": "트래블 요가매트를 세탁기로 세탁할 때는 미온수나 차가운 물을 사용하고 25도 이하 온도로 세탁합니다. 뜨거운 물로 세탁하면 제품이 변형될 수 있습니다."},
-{"id": "CS-011", "section": "세탁", "url": "https://smartstore.naver.com/soulmat/products/5367773261", "text": "트래블 요가매트를 세탁기로 세탁할 때 세탁망은 따로 필요하지 않습니다."},
-{"id": "CS-012", "section": "세탁", "url": "https://smartstore.naver.com/soulmat/products/5367773261", "text": "트래블 요가매트의 탈수는 짧게 하면 됩니다. 스웨이드 천이 아주 얇아서 탈수 시간을 길게 해도 짧게 해도 결과가 같습니다."},
-{"id": "CS-013", "section": "세탁", "url": "https://smartstore.naver.com/soulmat/products/5367773261", "text": "트래블 요가매트 세탁에는 중성세제를 사용합니다."},
-{"id": "CS-014", "section": "세탁", "url": "https://smartstore.naver.com/soulmat/products/5367773261", "text": "트래블 요가매트 세탁에 섬유유연제를 사용해도 되지만, 손바닥 미끌림을 줄이려면 자제하는 것이 좋습니다. 섬유유연제를 사용한 뒤에는 손발이 닿는 곳에 분무기로 물을 뿌려주면 밀착력이 크게 늘어납니다."},
-{"id": "CS-015", "section": "세탁", "url": "https://smartstore.naver.com/soulmat/products/5367773261", "text": "트래블 요가매트를 손세탁할 때는 샤워기로 미온수를 뿌리고 바디샴푸나 중성세제로 씻으면 됩니다. 제품을 오래 사용하려면 손세탁을 권장합니다."},
-{"id": "CS-016", "section": "세탁", "url": "https://smartstore.naver.com/soulmat/products/5367773261", "text": "트래블 요가매트는 건조기를 사용하면 제품이 변형될 수 있습니다. 건조는 반드시 그늘에서 해야 합니다."},
-{"id": "CS-020", "section": "색상", "url": "https://smartstore.naver.com/soulmat/products/5921391743", "text": "필라테스 리포머 매트의 옴그레이와 그레이는 같은 색상입니다. 이름만 다르게 표기된 것입니다."},
-{"id": "CS-021", "section": "색상", "url": "https://smartstore.naver.com/soulmat/products/5921391743", "text": "필라테스 리포머 매트는 베이지색을 옵션에서 선택해 구매할 수 있습니다. 베이지색 제품의 후면도 천연고무이며 후면 색상은 검정색입니다."},
-{"id": "CS-030", "section": "재입고", "url": "https://smartstore.naver.com/soulmat", "text": "품절된 색상의 재입고 일정은 이 안내 자료에 없습니다. 네이버 톡톡에 입고 알림 요청을 남기면 입고 시 연락을 받을 수 있습니다."}]
+[
+  {
+    "id": "SM-001",
+    "section": "브랜드",
+    "url": "https://soulmat.kr/",
+    "text": "소울매트(soulmat.kr)는 요가매트 전문 브랜드이자 요가·필라테스 용품 전문몰입니다. 사업자 상호는 소울메이트이며 대표전화는 0507-1316-1623입니다."
+  },
+  {
+    "id": "SM-002",
+    "section": "브랜드",
+    "url": "https://soulmat.kr/shopinfo/company.html",
+    "text": "소울매트의 사업장 주소는 서울특별시 강서구 양천로 564 등촌동두산위브센티움 1005호입니다. 반품 주소도 동일합니다."
+  },
+  {
+    "id": "SM-003",
+    "section": "브랜드",
+    "url": "https://soulmat.kr/",
+    "text": "소울매트는 '지구와 수련자를 위한 친환경 소재'를 브랜드 원칙으로 삼아 천연고무와 스웨이드 소재를 사용합니다."
+  },
+  {
+    "id": "SM-004",
+    "section": "브랜드",
+    "url": "https://soulmat.kr/product/list.html?cate_no=42",
+    "text": "소울매트의 천연고무 매트는 요가 강사가 직접 제작합니다. 상품 요약 문구에 '요가 강사가 제작하는 천연고무매트'로 표기되어 있습니다."
+  },
+  {
+    "id": "SM-005",
+    "section": "제품군",
+    "url": "https://soulmat.kr/",
+    "text": "소울매트 자사몰의 상품 카테고리는 트래블매트, 미니매트, 리포머매트, PU 매트, 요가용품(요가링·요가양말·요가타올·요가밴드·요가휠), 강사/업체전용으로 구성되어 있습니다."
+  },
+  {
+    "id": "SM-010",
+    "section": "트래블매트",
+    "url": "https://soulmat.kr/product/detail.html?product_no=102",
+    "text": "자사몰(soulmat.kr) 기준으로, 트래블 요가매트 1mm의 판매가는 59,800원입니다. 소비자가는 99,800원입니다."
+  },
+  {
+    "id": "SM-011",
+    "section": "트래블매트",
+    "url": "https://soulmat.kr/product/detail.html?product_no=102",
+    "text": "트래블 요가매트 1mm는 색상 15종으로 판매됩니다. 이 중 무늬가 있는 패턴 색상은 11종입니다. 드림캐쳐그린, 밀키웨이, 만다라, 가네샤, 차크라, 드림캐처브라운, 파드마플라워, 핑크몬스테라, 파드마트리니, 레인보우, 트윈클컬러입니다."
+  },
+  {
+    "id": "SM-011B",
+    "section": "트래블매트",
+    "url": "https://soulmat.kr/product/detail.html?product_no=102",
+    "text": "트래블 요가매트 1mm의 색상 15종 가운데 무늬가 없는 민무늬 색상은 4종입니다. 블루레이크, 옴 그레이, 물란다라 핑크, 아즈나 네이비입니다."
+  },
+  {
+    "id": "SM-012",
+    "section": "트래블매트",
+    "url": "https://soulmat.kr/product/detail.html?product_no=102",
+    "text": "트래블 요가매트는 윗면이 스웨이드 재질이고 바닥면이 천연고무인 2중 구조입니다. 두께는 1mm입니다."
+  },
+  {
+    "id": "SM-013",
+    "section": "트래블매트",
+    "url": "https://soulmat.kr/product/detail.html?product_no=102",
+    "text": "트래블 요가매트 1mm는 접어서 가방에 넣을 수 있어 여행용·홈트용으로 휴대가 간편합니다."
+  },
+  {
+    "id": "SM-014",
+    "section": "트래블매트",
+    "url": "https://soulmat.kr/product/detail.html?product_no=102",
+    "text": "트래블 요가매트는 바닥이 천연고무라 들뜨지 않고 바닥에 밀착됩니다. 윗면 스웨이드는 땀 흡수가 잘 되고 미끄럽지 않으며 청소가 쉽습니다."
+  },
+  {
+    "id": "SM-015",
+    "section": "트래블매트",
+    "url": "https://soulmat.kr/product/detail.html?product_no=102",
+    "text": "트래블 요가매트는 요가매트 단독으로도, 요가매트 타월로도 사용할 수 있습니다. 요가원에서 공용 매트 위에 자기 매트로 겹쳐 쓸 수 있습니다."
+  },
+  {
+    "id": "SM-016",
+    "section": "트래블매트",
+    "url": "https://soulmat.kr/product/detail.html?product_no=102",
+    "text": "트래블 요가매트는 물세탁이 가능해 위생적입니다. 다만 세탁 후에는 반드시 그늘에 말려야 합니다."
+  },
+  {
+    "id": "SM-017",
+    "section": "트래블매트",
+    "url": "https://soulmat.kr/product/detail.html?product_no=102",
+    "text": "트래블 요가매트는 1mm의 얇은 매트입니다. 두꺼운 매트를 원하는 경우에는 다른 카테고리의 제품을 확인해야 합니다."
+  },
+  {
+    "id": "SM-018",
+    "section": "트래블매트",
+    "url": "https://soulmat.kr/product/detail.html?product_no=41",
+    "text": "컬러플트라이앵클 스웨이드 요가매트는 두께 3mm 제품이며 판매가는 59,800원입니다."
+  },
+  {
+    "id": "SM-020",
+    "section": "미니매트",
+    "url": "https://soulmat.kr/product/list.html?cate_no=45",
+    "text": "자사몰(soulmat.kr) 기준으로, 소울매트 미니매트의 판매가는 38,600원입니다. 소비자가는 77,200원입니다."
+  },
+  {
+    "id": "SM-021",
+    "section": "미니매트",
+    "url": "https://soulmat.kr/product/list.html?cate_no=45",
+    "text": "미니매트는 요가수트라, 아쉬탕가, 천부경 디자인으로 판매되고 있습니다."
+  },
+  {
+    "id": "SM-022",
+    "section": "미니매트",
+    "url": "https://soulmat.kr/product/detail.html?product_no=52",
+    "text": "미니매트는 요가 및 명상 수련을 위한 컴팩트한 크기의 천연고무 매트입니다."
+  },
+  {
+    "id": "SM-030",
+    "section": "리포머매트",
+    "url": "https://soulmat.kr/product/detail.html?product_no=50",
+    "text": "자사몰(soulmat.kr) 기준으로, 필라테스 리포머 매트의 판매가는 38,800원입니다. 소비자가는 77,600원입니다."
+  },
+  {
+    "id": "SM-031",
+    "section": "리포머매트",
+    "url": "https://soulmat.kr/product/detail.html?product_no=50",
+    "text": "필라테스 리포머 매트는 천연고무 스웨이드 소재의 1mm 제품이며, 리포머 기구 위에 깔아 쓰는 논슬립 매트입니다."
+  },
+  {
+    "id": "SM-032",
+    "section": "리포머매트",
+    "url": "https://soulmat.kr/product/detail.html?product_no=50",
+    "text": "필라테스 리포머 매트의 용도는 필라테스 기구 위에서 자기 매트를 사용해 위생을 지키는 것입니다."
+  },
+  {
+    "id": "SM-033",
+    "section": "리포머매트",
+    "url": "https://soulmat.kr/product/list.html?cate_no=70",
+    "text": "필라테스 리포머 매트는 그레이, 네이비, 핑크 색상으로 판매되고 있습니다."
+  },
+  {
+    "id": "SM-040",
+    "section": "요가타올",
+    "url": "https://soulmat.kr/product/detail.html?product_no=83",
+    "text": "소울매트 요가타올의 판매가는 59,800원입니다. 소비자가는 99,800원입니다."
+  },
+  {
+    "id": "SM-041",
+    "section": "요가타올",
+    "url": "https://soulmat.kr/product/detail.html?product_no=83",
+    "text": "소울매트 요가타올은 요가매트 1mm와 같은 구조입니다. 윗면은 땀 흡수가 잘 되는 스웨이드 재질이고 아래쪽은 천연고무입니다."
+  },
+  {
+    "id": "SM-042",
+    "section": "요가타올",
+    "url": "https://soulmat.kr/product/detail.html?product_no=83",
+    "text": "요가타올은 단독 매트로도 사용할 수 있고, 기존에 쓰던 요가매트 위에 얹어서도 사용할 수 있습니다. 아래면 천연고무가 기존 매트에 밀착됩니다."
+  },
+  {
+    "id": "SM-043",
+    "section": "요가타올",
+    "url": "https://soulmat.kr/product/detail.html?product_no=83",
+    "text": "요가타올 윗면의 스웨이드는 땀이 흐르면 오히려 밀착력이 높아져 밀리지 않습니다. 세탁 후에는 반드시 그늘에 말려야 합니다."
+  },
+  {
+    "id": "SM-044",
+    "section": "요가타올",
+    "url": "https://soulmat.kr/product/detail.html?product_no=83",
+    "text": "요가타올의 색상은 파드마트리니, 레인보우, 블루레이크, 트윈클컬러, 옴 그레이, 물란다라 핑크, 아즈나 네이비 7종입니다."
+  },
+  {
+    "id": "SM-050",
+    "section": "요가양말",
+    "url": "https://soulmat.kr/product/detail.html?product_no=59",
+    "text": "소울매트 필라테스 요가 양말(토삭스)의 판매가는 59,800원입니다."
+  },
+  {
+    "id": "SM-051",
+    "section": "요가양말",
+    "url": "https://soulmat.kr/product/detail.html?product_no=59",
+    "text": "요가 양말의 종류는 라운드삭스, 오픈토삭스, 리본커버토삭스, 오버니삭스 4종입니다."
+  },
+  {
+    "id": "SM-052",
+    "section": "요가양말",
+    "url": "https://soulmat.kr/product/detail.html?product_no=59",
+    "text": "요가 양말의 컬러는 연블루, 연핑크, 연퍼플, 연카키, 블랙, 핑크, 퍼플, 그레이, 네이비 9종입니다."
+  },
+  {
+    "id": "SM-053",
+    "section": "요가양말",
+    "url": "https://soulmat.kr/product/detail.html?product_no=59",
+    "text": "요가 양말은 바닥면에 떨어지지 않는 실리콘 논슬립 처리가 되어 있어 안정된 자세를 돕습니다."
+  },
+  {
+    "id": "SM-054",
+    "section": "요가양말",
+    "url": "https://soulmat.kr/product/detail.html?product_no=59",
+    "text": "요가 양말은 발바닥에 땀이 많은 분, 안정된 자세를 원하는 분, 발의 각질을 가리고 싶은 분, 잘 미끄러지는 분에게 권장됩니다."
+  },
+  {
+    "id": "SM-055",
+    "section": "요가양말",
+    "url": "https://soulmat.kr/product/detail.html?product_no=59",
+    "text": "오버니삭스는 기장 55cm로 무릎 위 허벅지 중간까지 오는 제품이며 아이와 어른 모두 사용할 수 있습니다."
+  },
+  {
+    "id": "SM-060",
+    "section": "요가용품",
+    "url": "https://soulmat.kr/product/detail.html?product_no=58",
+    "text": "소울매트 요가링(종아리 요가링·마사지링)의 판매가는 59,800원이며 색상은 화이트펄과 소프트퍼플 2종입니다."
+  },
+  {
+    "id": "SM-061",
+    "section": "요가용품",
+    "url": "https://soulmat.kr/product/detail.html?product_no=62",
+    "text": "소울매트 요가 밴드(힙밴드)의 판매가는 59,800원이며 5종 라텍스 세트와 고급 3종 세트 두 가지 구성으로 판매됩니다."
+  },
+  {
+    "id": "SM-070",
+    "section": "배송",
+    "url": "https://soulmat.kr/shopinfo/guide.html",
+    "text": "자사몰(soulmat.kr) 기준으로, 소울매트의 배송 방법은 택배이며 배송 지역은 전국입니다."
+  },
+  {
+    "id": "SM-071",
+    "section": "배송",
+    "url": "https://soulmat.kr/shopinfo/guide.html",
+    "text": "자사몰(soulmat.kr) 기준으로, 배송비는 주문 금액이 50,000원 미만일 때 3,000원이 추가됩니다. 주문 금액이 50,000원 이상이면 배송비가 없습니다. 네이버 스마트스토어는 배송비 정책이 다릅니다."
+  },
+  {
+    "id": "SM-072",
+    "section": "배송",
+    "url": "https://soulmat.kr/shopinfo/guide.html",
+    "text": "자사몰(soulmat.kr) 기준으로, 배송 기간은 1일에서 5일이 소요됩니다."
+  },
+  {
+    "id": "SM-073",
+    "section": "배송",
+    "url": "https://soulmat.kr/shopinfo/guide.html",
+    "text": "자사몰(soulmat.kr) 기준으로, 산간벽지나 도서지방은 별도의 추가 배송 금액이 발생할 수 있습니다."
+  },
+  {
+    "id": "SM-080",
+    "section": "교환반품",
+    "url": "https://soulmat.kr/shopinfo/guide.html",
+    "text": "자사몰(soulmat.kr) 기준으로, 교환 및 반품은 상품을 공급받은 날로부터 7일 이내에 신청할 수 있습니다. 가전제품의 경우 포장을 개봉하지 않은 상태여야 합니다."
+  },
+  {
+    "id": "SM-081",
+    "section": "교환반품",
+    "url": "https://soulmat.kr/shopinfo/guide.html",
+    "text": "상품의 표시·광고 내용과 실제 상품이 다른 경우에는 상품을 공급받은 날로부터 3개월 이내, 또는 그 사실을 안 날로부터 30일 이내에 교환·반품을 신청할 수 있습니다."
+  },
+  {
+    "id": "SM-082",
+    "section": "교환반품",
+    "url": "https://soulmat.kr/shopinfo/guide.html",
+    "text": "고객의 사용으로 상품이 훼손된 경우, 포장을 개봉했거나 포장이 훼손되어 상품 가치가 상실된 경우, 고객 책임으로 손상된 경우에는 교환·반품이 불가능합니다."
+  },
+  {
+    "id": "SM-083",
+    "section": "교환반품",
+    "url": "https://soulmat.kr/shopinfo/guide.html",
+    "text": "자사몰(soulmat.kr) 기준으로, 고객의 단순 변심으로 교환이나 반품을 하는 경우 상품 반송 비용은 고객이 부담합니다. 자사몰에는 반송 비용의 금액이 명시되어 있지 않습니다. 네이버 스마트스토어는 상품별로 반품비와 교환비 금액이 정해져 있습니다."
+  },
+  {
+    "id": "SM-084",
+    "section": "교환반품",
+    "url": "https://soulmat.kr/shopinfo/guide.html",
+    "text": "반품 주소는 서울특별시 강서구 양천로 564 등촌동두산위브센티움 1005호입니다."
+  },
+  {
+    "id": "SM-085",
+    "section": "환불",
+    "url": "https://soulmat.kr/shopinfo/guide.html",
+    "text": "자사몰(soulmat.kr) 기준으로, 반품 확인 여부를 확인한 후 3영업일 이내에 결제 금액을 환불합니다. 신용카드 결제는 승인 취소로 처리되며, 그 외 결제 수단은 결제일에 맞춰 청구되거나 익월에 환급됩니다."
+  },
+  {
+    "id": "SM-090",
+    "section": "문의",
+    "url": "https://soulmat.kr/",
+    "text": "소울매트 고객 문의 대표전화는 0507-1316-1623입니다. 네이버 톡톡과 카카오톡 상담도 이용할 수 있습니다."
+  },
+  {
+    "id": "SM-091",
+    "section": "문의",
+    "url": "https://soulmat.kr/board/free/list.html?board_no=3",
+    "text": "소울매트 자사몰에는 이용안내 FAQ 게시판이 있으며 비회원 구매, 비회원 주문 내역 조회, 주문번호 분실, 회원 탈퇴, 회원정보 수정, 아이디·비밀번호 분실, 주문 내역 조회, 반품·교환 배송비, 쿠폰 확인, 쿠폰 사용 방법 10개 항목을 다룹니다."
+  },
+  {
+    "id": "SM-092",
+    "section": "문의",
+    "url": "https://soulmat.kr/board/consult/list.html",
+    "text": "소울매트 자사몰에는 1:1 문의 게시판과 상품문의 게시판이 별도로 운영됩니다."
+  },
+  {
+    "id": "SM-100",
+    "section": "구매채널",
+    "url": "https://soulmat.kr/product/detail.html?product_no=102",
+    "text": "소울매트는 자사몰 soulmat.kr 외에 네이버 스마트스토어에서도 판매합니다. 스마트스토어 주소는 smartstore.naver.com/soulmat입니다."
+  },
+  {
+    "id": "SM-101",
+    "section": "구매채널",
+    "url": "https://soulmat.kr/product/detail.html?product_no=102",
+    "text": "소울매트 자사몰의 상품은 해외배송 가능 상품으로 표시되어 있습니다."
+  },
+  {
+    "id": "SM-102",
+    "section": "구매채널",
+    "url": "https://soulmat.kr/product/detail.html?product_no=102",
+    "text": "소울매트 자사몰에서는 1회 구매 외에 정기배송 신청도 가능합니다."
+  },
+  {
+    "id": "SM-103",
+    "section": "구매채널",
+    "url": "https://soulmat.kr/board/free/list.html?board_no=5",
+    "text": "소울매트는 요가강사와 사업자를 위한 회원신청 게시판을 운영하며, 강사/업체전용 상품 카테고리가 별도로 있습니다."
+  },
+  {
+    "id": "NS-001",
+    "section": "채널안내",
+    "url": "https://smartstore.naver.com/soulmat",
+    "text": "소울매트는 자사몰 soulmat.kr과 네이버 스마트스토어 두 곳에서 판매합니다. 두 채널은 배송비와 반품·교환 비용 정책이 서로 다릅니다. 비용을 안내할 때는 어느 채널에서 구매하는지 먼저 확인해야 합니다."
+  },
+  {
+    "id": "NS-002",
+    "section": "스마트스토어 배송",
+    "url": "https://smartstore.naver.com/soulmat",
+    "text": "네이버 스마트스토어 기준으로, 취급 상품 39개 중 27개는 배송비가 무료입니다. 나머지는 상품에 따라 2,900원 또는 3,500원의 배송비가 있습니다. 배송비는 상품마다 개별로 설정되어 있으므로 상품 페이지에서 확인해야 합니다."
+  },
+  {
+    "id": "NS-003",
+    "section": "스마트스토어 반품교환",
+    "url": "https://smartstore.naver.com/soulmat",
+    "text": "네이버 스마트스토어 기준으로, 반품비와 교환비는 상품마다 다릅니다. 가장 많은 상품(23개)은 반품비 3,000원, 교환비 6,000원입니다. 그 외 반품비 3,900원·교환비 7,800원, 반품비 3,400원·교환비 6,800원, 반품비 3,450원·교환비 6,900원, 반품비 2,990원·교환비 5,980원인 상품이 있습니다."
+  },
+  {
+    "id": "NS-004",
+    "section": "스마트스토어 반품교환",
+    "url": "https://smartstore.naver.com/soulmat",
+    "text": "네이버 스마트스토어에서 가장 일반적인 반품·교환 비용은 반품 3,000원, 교환 6,000원이며 요가매트류 대부분이 여기에 해당합니다. 정확한 금액은 각 상품 페이지에 표시됩니다."
+  },
+  {
+    "id": "NS-010",
+    "section": "스마트스토어 의류",
+    "url": "https://smartstore.naver.com/soulmat",
+    "text": "네이버 스마트스토어에서는 자사몰에 없는 요가 의류를 취급합니다. 여성 요가 하렘팬츠 19,800원, 여성 요가 필라테스 속바지 일체형 투인원 숏팬츠 29,800원, 여성 하이웨스트 숏팬츠 2.5부 37,500원, 여성 조거팬츠 요가바지 39,500원입니다."
+  },
+  {
+    "id": "NS-011",
+    "section": "스마트스토어 의류",
+    "url": "https://smartstore.naver.com/soulmat",
+    "text": "네이버 스마트스토어에서 소울매트 필라테스 요가 논슬립 크루삭스 4족 세트를 11,400원에 판매합니다."
+  },
+  {
+    "id": "NS-020",
+    "section": "스마트스토어 명상소품",
+    "url": "https://smartstore.naver.com/soulmat",
+    "text": "네이버 스마트스토어에서는 자사몰에 없는 명상·요가원 인테리어 소품을 취급합니다. 대나무 윈드차임 24,800원, 티베탄 월행잉 태피스트리 차크라 코튼 145cm 24,800원, 네팔 수제 황동 띵샤(명상종) 보관케이스 포함 29,800원입니다."
+  },
+  {
+    "id": "NS-030",
+    "section": "스마트스토어 매트",
+    "url": "https://smartstore.naver.com/soulmat",
+    "text": "네이버 스마트스토어에서는 자사몰에 없는 매트도 취급합니다. 아쉬탕가 빈야사 프라이머리 요가매트 78,800원, PU 요가매트 천연고무 5mm 58,000원, 지구매트·달매트 트래블 요가매트 1mm 59,800원입니다."
+  },
+  {
+    "id": "NS-031",
+    "section": "스마트스토어 매트",
+    "url": "https://smartstore.naver.com/soulmat",
+    "text": "네이버 스마트스토어에서 요가담요(명상담요, 아헹가 도구활용)를 26,000원에 취급합니다."
+  },
+  {
+    "id": "NS-032",
+    "section": "스마트스토어 매트",
+    "url": "https://smartstore.naver.com/soulmat",
+    "text": "네이버 스마트스토어의 미니매트 그룹 4mm는 요가수트라 다크네이비와 아쉬탕가 스카이가 38,600원, 천부경 그레이가 48,600원입니다."
+  },
+  {
+    "id": "NS-040",
+    "section": "스마트스토어 단체·렌탈",
+    "url": "https://smartstore.naver.com/soulmat",
+    "text": "네이버 스마트스토어에서 요가매트 1일 렌탈(대여)을 5,000원부터 제공합니다. 단체 행사, 기업, 학교, 야외요가용입니다."
+  },
+  {
+    "id": "NS-041",
+    "section": "스마트스토어 단체·렌탈",
+    "url": "https://smartstore.naver.com/soulmat",
+    "text": "네이버 스마트스토어에서 요가매트 단체주문 OEM과 자체로고 제작을 받습니다. 요가원, 주민센터, 정부기관 단체제작용이며 수량과 사양에 따라 견적이 달라집니다."
+  },
+  {
+    "id": "NS-050",
+    "section": "재고안내",
+    "url": "https://smartstore.naver.com/soulmat",
+    "text": "상품의 재고와 품절 여부는 이 안내 자료에 포함되어 있지 않습니다. 실시간 재고는 자사몰 또는 스마트스토어의 해당 상품 페이지에서 확인해야 합니다."
+  },
+  {
+    "id": "NS-051",
+    "section": "가격안내",
+    "url": "https://smartstore.naver.com/soulmat",
+    "text": "이 안내의 가격은 자료를 수집한 시점의 값입니다. 같은 상품이라도 자사몰과 스마트스토어의 표시 가격이나 할인율이 다를 수 있으므로, 결제 금액은 구매하는 채널의 상품 페이지에서 확인해야 합니다."
+  },
+  {
+    "id": "CS-001",
+    "section": "치수",
+    "url": "https://smartstore.naver.com/soulmat/products/6999682361",
+    "text": "트래블 요가매트 1mm의 사이즈는 가로 183cm, 세로 61cm입니다. 매트 크기를 묻는 질문의 답은 183×61cm입니다."
+  },
+  {
+    "id": "CS-002",
+    "section": "치수",
+    "url": "https://smartstore.naver.com/soulmat/products/6999682361",
+    "text": "트래블 요가매트는 일반적인 요가매트보다 가로가 2cm 정도 작게 제작되었습니다. 가지고 다니기 편하도록 만든 크기입니다."
+  },
+  {
+    "id": "CS-003",
+    "section": "사용환경",
+    "url": "https://smartstore.naver.com/soulmat/products/6999682361",
+    "text": "트래블 요가매트는 두께가 1mm이고 바닥면이 천연고무입니다. 해변 모래나 잔디밭 같은 곳에서는 그대로 깔아서 사용할 수 있습니다."
+  },
+  {
+    "id": "CS-004",
+    "section": "사용환경",
+    "url": "https://smartstore.naver.com/soulmat/products/6999682361",
+    "text": "트래블 요가매트는 두께가 1mm이므로 도로나 마룻바닥처럼 딱딱한 바닥에서는 쿠션감이 거의 없어 딱딱하게 느껴질 수 있습니다. 딱딱한 바닥에서 쿠션감이 필요하면 기존 매트 위에 얹어서 쓰는 것이 좋습니다."
+  },
+  {
+    "id": "CS-005",
+    "section": "사용환경",
+    "url": "https://smartstore.naver.com/soulmat/products/6999682361",
+    "text": "요가원이나 집에서 사용할 때는 트래블 요가매트를 요가타월처럼 기존 매트 위에 얹어서 사용하기도 합니다."
+  },
+  {
+    "id": "CS-006",
+    "section": "사용환경",
+    "url": "https://smartstore.naver.com/soulmat/products/6999682361",
+    "text": "해변 모래나 잔디밭처럼 바닥이 푹신한 곳에서는 트래블 요가매트를 깔고 수련해도 쿠션감이 있습니다. 다만 이 쿠션감은 두께 1mm인 매트가 만드는 것이 아니라 모래나 잔디 바닥 자체가 푹신해서 생기는 것입니다. 매트는 바닥과 몸 사이를 가려 주고 미끄러지지 않게 잡아 주는 역할을 합니다."
+  },
+  {
+    "id": "CS-010",
+    "section": "세탁",
+    "url": "https://smartstore.naver.com/soulmat/products/5367773261",
+    "text": "트래블 요가매트를 세탁기로 세탁할 때는 미온수나 차가운 물을 사용하고 25도 이하 온도로 세탁합니다. 뜨거운 물로 세탁하면 제품이 변형될 수 있습니다."
+  },
+  {
+    "id": "CS-011",
+    "section": "세탁",
+    "url": "https://smartstore.naver.com/soulmat/products/5367773261",
+    "text": "트래블 요가매트를 세탁기로 세탁할 때 세탁망은 따로 필요하지 않습니다."
+  },
+  {
+    "id": "CS-012",
+    "section": "세탁",
+    "url": "https://smartstore.naver.com/soulmat/products/5367773261",
+    "text": "트래블 요가매트의 탈수는 짧게 하면 됩니다. 스웨이드 천이 아주 얇아서 탈수 시간을 길게 해도 짧게 해도 결과가 같습니다."
+  },
+  {
+    "id": "CS-013",
+    "section": "세탁",
+    "url": "https://smartstore.naver.com/soulmat/products/5367773261",
+    "text": "트래블 요가매트 세탁에는 중성세제를 사용합니다."
+  },
+  {
+    "id": "CS-014",
+    "section": "세탁",
+    "url": "https://smartstore.naver.com/soulmat/products/5367773261",
+    "text": "트래블 요가매트 세탁에 섬유유연제를 사용해도 되지만, 손바닥 미끌림을 줄이려면 자제하는 것이 좋습니다. 섬유유연제를 사용한 뒤에는 손발이 닿는 곳에 분무기로 물을 뿌려주면 밀착력이 크게 늘어납니다."
+  },
+  {
+    "id": "CS-015",
+    "section": "세탁",
+    "url": "https://smartstore.naver.com/soulmat/products/5367773261",
+    "text": "트래블 요가매트를 손세탁할 때는 샤워기로 미온수를 뿌리고 바디샴푸나 중성세제로 씻으면 됩니다. 제품을 오래 사용하려면 손세탁을 권장합니다."
+  },
+  {
+    "id": "CS-016",
+    "section": "세탁",
+    "url": "https://smartstore.naver.com/soulmat/products/5367773261",
+    "text": "트래블 요가매트는 건조기를 사용하면 제품이 변형될 수 있습니다. 건조는 반드시 그늘에서 해야 합니다."
+  },
+  {
+    "id": "CS-020",
+    "section": "색상",
+    "url": "https://smartstore.naver.com/soulmat/products/5921391743",
+    "text": "필라테스 리포머 매트의 옴그레이와 그레이는 같은 색상입니다. 이름만 다르게 표기된 것입니다."
+  },
+  {
+    "id": "CS-021",
+    "section": "색상",
+    "url": "https://smartstore.naver.com/soulmat/products/5921391743",
+    "text": "필라테스 리포머 매트는 베이지색을 옵션에서 선택해 구매할 수 있습니다. 베이지색 제품의 후면도 천연고무이며 후면 색상은 검정색입니다."
+  },
+  {
+    "id": "CS-030",
+    "section": "재입고",
+    "url": "https://smartstore.naver.com/soulmat",
+    "text": "품절된 색상의 재입고 일정은 이 안내 자료에 없습니다. 네이버 톡톡에 입고 알림 요청을 남기면 입고 시 연락을 받을 수 있습니다."
+  }
+]
