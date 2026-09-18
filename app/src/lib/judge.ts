@@ -1,4 +1,4 @@
-import { chatJson } from './ollama'
+import { chatJson } from './llm'
 import { type FactCheck, factCheck } from './factcheck'
 import { REFUSAL_LINE } from './prompt'
 import type { Judgement, Retrieval } from './types'

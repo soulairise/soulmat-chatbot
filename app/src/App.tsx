@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { BM25, TOP_K, WEAK_EVIDENCE_THRESHOLD, retrieve } from './lib/rag'
-import { CHAT_MODEL, EMBED_MODEL, checkOllama, embedQuery, streamChat } from './lib/ollama'
-import type { OllamaStatus } from './lib/ollama'
+import { CHAT_MODEL, EMBED_MODEL, checkBackend, embedQuery, setAccessCode, streamChat } from './lib/llm'
+import type { BackendStatus } from './lib/llm'
 import { buildSystemPrompt, buildUserPrompt } from './lib/prompt'
 import { judge } from './lib/judge'
 import { productClarification } from './lib/productScope'
@@ -44,7 +44,7 @@ const STAGE_LABEL: Record<Stage, string> = {
 export default function App() {
   const [store, setStore] = useState<DocStore | null>(null)
   const [storeError, setStoreError] = useState<string>()
-  const [status, setStatus] = useState<OllamaStatus>({ state: 'checking' })
+  const [status, setStatus] = useState<BackendStatus>({ state: 'checking' })
   const [turns, setTurns] = useState<Turn[]>([])
   const [input, setInput] = useState('')
   const [busy, setBusy] = useState(false)
@@ -63,7 +63,7 @@ export default function App() {
   }, [])
 
   useEffect(() => {
-    checkOllama().then(setStatus)
+    checkBackend().then(setStatus)
   }, [])
 
   useEffect(() => {
@@ -138,7 +138,7 @@ export default function App() {
   return (
     <div className="page">
       <Intro store={store} storeError={storeError} />
-      <StatusBar status={status} onRecheck={() => { setStatus({ state: 'checking' }); checkOllama().then(setStatus) }} />
+      <StatusBar status={status} onRecheck={() => { setStatus({ state: 'checking' }); checkBackend().then(setStatus) }} />
 
       <section className="chat" aria-label="챗봇 대화">
         {turns.length === 0 && (
@@ -234,44 +234,58 @@ function Intro({ store, storeError }: { store: DocStore | null; storeError?: str
 
 /* ---------------- 상태 ---------------- */
 
-function StatusBar({ status, onRecheck }: { status: OllamaStatus; onRecheck: () => void }) {
-  if (status.state === 'checking') return <div className="status checking">Ollama 연결을 확인하는 중…</div>
+function StatusBar({ status, onRecheck }: { status: BackendStatus; onRecheck: () => void }) {
+  if (status.state === 'checking') return <div className="status checking">연결을 확인하는 중…</div>
 
   if (status.state === 'ready')
     return (
       <div className="status ok">
-        Ollama 연결됨 · 생성 <code>{CHAT_MODEL}</code> · 임베딩 <code>{EMBED_MODEL}</code>
+        연결됨 · 생성 <code>{CHAT_MODEL}</code> · 임베딩 <code>{EMBED_MODEL}</code>
       </div>
     )
 
-  if (status.state === 'no-model')
+  // 접속코드가 없거나 틀렸다. 팀원이 처음 들어오면 여기부터 만난다.
+  if (status.state === 'need-code')
     return (
       <div className="status warn">
-        <p>Ollama는 실행 중이지만 필요한 모델이 없습니다: {status.missing.join(', ')}</p>
-        <pre>{status.missing.map((m) => `ollama pull ${m}`).join('\n')}</pre>
-        <button onClick={onRecheck}>다시 확인</button>
+        <p>
+          <strong>접속코드를 입력해 주세요.</strong> 소울매트에서 공유받은 코드입니다.
+        </p>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault()
+            const el = (e.currentTarget.elements.namedItem('code') as HTMLInputElement)
+            if (!el.value.trim()) return
+            setAccessCode(el.value)
+            onRecheck()
+          }}
+        >
+          <input name="code" type="password" placeholder="접속코드" autoComplete="off" />
+          <button type="submit">확인</button>
+        </form>
+        <p className="dim">
+          코드는 이 브라우저에만 저장되고 서버로 보내는 것 외에 어디에도 남지 않습니다.
+        </p>
+      </div>
+    )
+
+  // 빌드할 때 프록시 주소를 안 넣었다. 개발자가 볼 화면이지 팀원이 볼 화면이 아니다.
+  if (status.state === 'no-proxy')
+    return (
+      <div className="status err">
+        <p>
+          <strong>프록시 주소가 설정되지 않았습니다.</strong> 빌드 시{' '}
+          <code>VITE_PROXY_URL</code> 이 필요합니다.
+        </p>
+        <pre>{'VITE_PROXY_URL=https://….workers.dev npm run build'}</pre>
       </div>
     )
 
   return (
     <div className="status err">
       <p>
-        <strong>Ollama에 연결하지 못했습니다.</strong> 이 페이지는 서버에서 답을 만들지 않고,
-        보고 계신 컴퓨터의 Ollama가 답변을 생성합니다. 아래 3가지를 확인해 주세요.
+        <strong>연결하지 못했습니다.</strong> 잠시 후 다시 시도해 주세요.
       </p>
-      <ol>
-        <li>
-          Ollama 설치 후 실행 — <a href="https://ollama.com/download" target="_blank" rel="noreferrer">ollama.com/download</a>
-        </li>
-        <li>
-          모델 준비
-          <pre>{`ollama pull ${CHAT_MODEL}\nollama pull ${EMBED_MODEL}`}</pre>
-        </li>
-        <li>
-          이 페이지 주소에서의 호출 허용 (CORS)
-          <pre>{`# macOS / Linux\nlaunchctl setenv OLLAMA_ORIGINS "${location.origin}"   # macOS\nexport OLLAMA_ORIGINS="${location.origin}"             # Linux\n# 설정 후 Ollama 재시작`}</pre>
-        </li>
-      </ol>
       <p className="dim">오류: {status.error}</p>
       <button onClick={onRecheck}>다시 확인</button>
     </div>
