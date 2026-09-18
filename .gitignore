@@ -2,3 +2,7 @@ node_modules/
 dist/
 .DS_Store
 *.local
+
+# wrangler 로컬 캐시·상태. 계정 정보가 섞인다.
+worker/.wrangler/
+.wrangler/
