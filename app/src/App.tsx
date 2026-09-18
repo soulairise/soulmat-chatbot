@@ -448,8 +448,9 @@ function Footer({ store }: { store: DocStore | null }) {
   return (
     <footer className="foot">
       <p>
-        이 챗봇은 서버에서 답을 만들지 않습니다. 페이지를 연 컴퓨터의 Ollama가 답변을 생성하고,
-        질문 임베딩도 같은 Ollama가 처리합니다. 대화 내용은 어디에도 저장되지 않습니다.
+        이 챗봇은 소울매트 공개 자료에만 근거해 답합니다. 답변 생성은 소울매트가 운영하는
+        중계 서버를 거쳐 처리되며, <strong>대화 내용은 어디에도 저장되지 않습니다.</strong>
+        답이 이상하면 근거 문서를 함께 캡처해 알려 주세요.
       </p>
       {store && <p className="dim">자료 출처: {store.source} · 이 챗봇은 소울매트 공식 상담 창구가 아닙니다.</p>}
     </footer>
