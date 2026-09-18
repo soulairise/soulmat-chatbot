@@ -8,7 +8,7 @@ import { readFileSync } from 'node:fs'
 import { BM25, TOP_K, retrieve } from '../src/lib/rag'
 import { buildSystemPrompt, buildUserPrompt } from '../src/lib/prompt'
 import { judge } from '../src/lib/judge'
-import { embedQuery, streamChat } from '../src/lib/ollama'
+import { embedQuery, streamChat } from '../src/lib/llm'
 import type { DocStore } from '../src/lib/types'
 
 const name = process.argv[2] || 'baseline'

@@ -9,33 +9,27 @@ soulmat.kr 공개 자료에만 근거해 답하고, **그 근거와 자동 판�
 
 ---
 
-## 사용 조건 — 열기 전에 확인하세요
+## 쓰는 법 — 접속코드 하나면 됩니다
 
-이 페이지는 정적 웹페이지이고, 답변은 **당신 컴퓨터의 Ollama**가 만듭니다. 아래 3가지가 갖춰져야 동작합니다.
+**설치할 것이 없습니다.** 링크를 열고 공유받은 접속코드를 넣으면 바로 씁니다.
 
-**1. Ollama 설치 및 실행** — [ollama.com/download](https://ollama.com/download)
+- 배포 주소: **https://soulairise.github.io/soulmat-chatbot/**
+- 답변 생성과 질문 임베딩은 Cloudflare 워커(`worker/`)가 OpenAI 로 중계합니다.
+- **API 키는 워커 시크릿에만 있습니다.** 이 저장소에도, 브라우저 번들에도 없습니다.
 
-**2. 모델 준비** (합계 약 2.5GB)
+> 2026-09-18 이전에는 각자 컴퓨터의 Ollama 가 답을 만드는 구조였습니다. 링크를 받은 사람마다
+> 설치 · 모델 2.5GB · CORS 설정이 필요해 "링크만 주면 되는" 상태가 아니었습니다.
+> `src/lib/ollama.ts` 는 남겨 두었습니다 — 로컬에서 비용 없이 돌려 볼 때 씁니다.
+
+### 비용이 생깁니다
+
+팀원이 쓰는 만큼 저장소 주인의 OpenAI 계정에 청구됩니다. 접속코드로 막고 있지만
+코드가 새면 그대로 비용입니다. **공유가 끝나면 접속코드를 바꾸거나 워커를 내리세요.**
 
 ```bash
-ollama pull qwen3.5:2b
-ollama pull embeddinggemma:300m
+npx wrangler secret put ACCESS_CODE --name soulmat-chatbot-proxy   # 코드 교체
+npx wrangler delete --name soulmat-chatbot-proxy                   # 워커 내리기
 ```
-
-**3. 이 페이지 주소에서의 호출 허용 (CORS)**
-
-```bash
-# macOS
-launchctl setenv OLLAMA_ORIGINS "https://soulairise.github.io"
-# Linux
-export OLLAMA_ORIGINS="https://soulairise.github.io"
-# 설정 후 Ollama 재시작
-```
-
-Ollama가 꺼져 있으면 오류 화면 대신 위 3단계 안내가 표시됩니다.
-**첫 방문에 임베딩 모델을 브라우저로 내려받는 절차는 없습니다.** 그 이유는 아래 설계 결정에 적었습니다.
-
----
 
 ## 설계 결정 요약
 
